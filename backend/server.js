@@ -7,7 +7,7 @@ const app = express();
 
 // Minimal CORS Configuration
 const allowedOrigins = [
-  'https://auto-part-ocean-guhn.vercel.app/', // Vercel frontend
+  'https://vercel.com/fnps-projects/autopartocean/53wQ9BG7ng1hmvibaSqmFYtUccNi', // Vercel frontend
   'https://autopartocean.com',        // Your production domain
   'https://www.autopartocean.com'     // WWW variant
 ];
