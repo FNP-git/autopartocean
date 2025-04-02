@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#header{
+    width: 100%;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 1.5vh;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    position: relative;
+    z-index: 10;
+}
+
+#header-part2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter Tight";
+    width: 30vw;  /* 30% of viewport width */
+    height: 10vh; /* 10% of viewport height */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#sp{
+    font-size: 2.5vh;
+}
+
+
+#logo {
+    height: 50vh;  /* Fixed height for desktop */
+    width: auto;   /* Maintain aspect ratio */
+    max-width: 30vw; /* Restrict excessive growth */
+    object-fit: contain;
+    margin-top: 16vh;
+    position: relative;
+}
+
+/* Pixel-perfect CSS */
+.trustpilot-button-wrapper {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .trustpilot-button {
+    display: inline-flex; /* Changed from flex to inline-flex */
+    align-items: center;
+    gap: 6px;
+    padding: 4px 16px; /* Reduced vertical padding */
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    line-height: 1.2; /* Added line-height instead of fixed height */
+    margin: 0; /* Ensure no external margins */
+    vertical-align: middle; /* Better inline alignment */
+  }
+  
+  .trustpilot-button:hover {
+    background: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: translateY(-2px); /* Reduced from -5px */
+  }
+  
+  .trustpilot-logo {
+    width: 80px; /* Slightly reduced from original */
+    height: auto;
+    object-fit: contain;
+    margin-left: 2px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .trust-btn {
+      padding: 0.6rem;
+    }
+    
+    .trust-logo {
+      width: 100px;
+    }
+  }
+@keyframes vibrate {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.nmbr{
+    color: red;
+    font-size: 3vw;
+    animation: vibrate 1s ease-in-out 2s infinite alternate;
+}
+
+@keyframes zoomEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#bbb{
+    height: 18vh;
+    animation: zoomEffect 0.8s ease-in-out 1s 1 forwards;
+}
+#trust{
+    height: 4.8vw;
+    animation: zoomEffect 0.8s ease-in-out 1s 1 forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) { /* iPad and similar devices */
+    #header{
+        gap: 3vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1vh;
+        position: relative;
+        z-index: 10;
+    }
+    #header-part2 {
+        display: none;
+    }
+    #bbb {
+        height: 20vh; /* Adjust BBB size to match desktop */
+        width: auto;
+        max-width: 30vw;
+        object-fit: contain;
+    }
+    #logo {
+        height: 50vh; /* Keep logo same as desktop */
+        width: auto;
+        max-width: 40vw;
+        object-fit: contain;
+        margin-bottom: 1.5vh;
+    }
+}
+
+@media (max-width: 768px) { /* Phones */
+    #header {
+        height: 10vh; /* Restrict header height */
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2vw;
+        align-items: center; /* Ensure items stay visible */
+        position: relative;
+        z-index: 10;
+    }
+    #logo{
+        height: 35vh; /* Keep them visible within the header */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: contain;
+        margin-top: 13vh;
+        margin-left: 2vw;
+    }
+    #bbb {
+        max-height: 80%; /* Keep them visible within the header */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: contain;
+        margin-top: 1vh;
+        height: 17vh;
+    }
+    .trustpilot-button-wrapper{
+        display: none; /* Hide Trustpilot button on mobile */
+    }
+    }
+    
+
+@media (max-width: 530px) { /* Phones */
+    #header {
+        height: 10vh; /* Restrict header height */
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2vw;
+        align-items: center; /* Ensure items stay visible */
+        position: relative;
+        z-index: 10;
+    }
+    #logo{
+        height: 35vh; /* Keep them visible within the header */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: contain;
+        margin-top: 10vh;
+        margin-left: 2vw;
+    }
+    #bbb {
+        max-height: 90%; /* Keep them visible within the header */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: contain;
+        margin-right: 9vw;
+        margin-top: 2vh;
+    }
+}
+
+
+
+

@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+/* General Styling */
+.about-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+}
+
+.about-content {
+    max-width: 1100px;
+    text-align: left;
+    font-family: Inter Tight, sans-serif;
+}
+
+/* Headings */
+.about-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-subheading {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Text Content */
+.about-text {
+    font-size: 1.3rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-closing {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Sections */
+.about-section {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Titles */
+.about-category {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+/* Lists */
+.about-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-list li {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Benefits Section */
+.about-benefits {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.about-benefits li {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,62 @@
+/* CallButton.css */
+.call-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensures the button stays on top of other content */
+    text-decoration: none; /* Remove default link styling */
+    display: none; /* Initially hidden */
+    align-items: center; /* Vertically center the button and text */
+  }
+  
+  /* Show the button only on mobile and tablet */
+  @media (max-width: 1024px) {
+    .call-button {
+      display: flex; /* Show the button and text side by side */
+    }
+  }
+  
+  .call-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    animation: rotateEffect 1s infinite; /* Apply rotation animation (1 second rotate, 2 seconds rest) */
+  }
+  
+  @keyframes rotateEffect {
+    0% {
+      transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    25% {
+      transform: rotate(-5deg); /* Rotate to -5 degrees */
+    }
+    50% {
+      transform: rotate(5deg); /* Rotate to 5 degrees */
+    }
+    75% {
+      transform: rotate(-5deg); /* Rotate back to -5 degrees */
+    }
+    100% {
+      transform: rotate(5deg); /* Rotate to 5 degrees */
+    }
+  }
+  
+  /* Button Icon */
+  .call-btn img {
+    width: 50px; /* Adjust size of the call icon */
+    height: 50px;
+  }
+  
+  /* Call Us Text beside the button */
+  .call-text {
+    margin-left: 1vw; /* Space between the button and text */
+    font-size: 3vh;
+    font-family: Inter Tight; /* Use the same font as the button */
+    color: black; /* Match button color */
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2.2vw;
+    text-align: center;
+    border: 2px solid black; /* Green border */
+  }
+  

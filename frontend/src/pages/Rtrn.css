@@ -1,0 +1,82 @@
+.return-container {
+    max-width: 70vw;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .return-title {
+    text-align: center;
+    font-family: Inter Tight;
+    color: #b71c1c;
+    font-size: 5vh;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .return-text {
+    font-size: 2.4vh;
+    line-height: 4vh;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: Inter Tight;
+  }
+  
+  .return-subtitle {
+    color: #b71c1c;
+    font-size: 2.4vh;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-family: Inter Tight;
+  }
+  
+  .return-list {
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: Inter Tight;
+  }
+  
+  .return-list li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 2.4vh;    line-height: 1.6;
+    color: #555;
+    font-family: Inter Tight;
+    margin-bottom: 10px;
+  }
+  
+  .return-list li::before {
+    content: '\2713'; /* Checkmark symbol */
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Inter Tight;
+  }
+  
+  .return-disclaimer {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+    font-family: Inter Tight;
+  }
+  
+  .return-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Inter Tight;
+  }
+  
+  .return-container a:hover {
+    text-decoration: underline;
+    font-family: Inter Tight;
+  }
+  

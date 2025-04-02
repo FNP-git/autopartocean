@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=PP+Mori:wght@400;600&display=swap');
+
+.contact-page {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh; /* ✅ Allow content to expand naturally */
+    font-family: Inter Tight;
+}
+
+.map-container {
+    margin-top: 4vh;
+    width: 75vw;
+    height: 50vh;
+    margin-bottom: 2vh;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 1vw;
+    border: none;
+}
+
+.contact-container {
+    width: 75vw;
+    background: white;
+    padding: 3vh 3vw;
+    border-radius: 1vw;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh; /* ✅ Ensures footer visibility */
+}
+
+.contact-container h2 {
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2vh;
+    font-size: 1.2vw;
+}
+
+.contact-details div {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-details h3 {
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+.contact-details p {
+    margin: 0.5vh 0;
+}
+
+.hdngs {
+    color: red;
+}
+
+.lctn {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ Center-align location content */
+    text-align: center;
+}
+
+/* 📱 Tablet & Mobile Fix */
+@media (max-width: 768px) {
+    .map-container {
+        width: 90vw; 
+        height: 40vh; 
+    }
+
+    .contact-container {
+        width: 90vw; 
+        padding: 5vh 5vw;
+        margin-bottom: 0.1vh; /* ✅ Extra space for footer */
+    }
+
+    .contact-container h2 {
+        font-size: 6vh;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+        font-size: 3vh;
+        gap: 4vh;
+    }
+
+    .contact-details div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-details h3 {
+        font-size: 4vh;
+    }
+
+    .contact-details p {
+        font-size: 2.5vh;
+        margin-bottom: 1vh;
+    }
+
+    /* ✅ Keep location content centered */
+    .lctn {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ✅ Ensure footer is visible */
+    .contact-page {
+        min-height: auto; /* Allow full content to be shown */
+        padding-bottom: 20vh; /* Extra space at bottom */
+    }
+}

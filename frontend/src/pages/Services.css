@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+.service-main{
+    
+    display: flex;
+    font-family: Inter Tight;
+    background-image: url('../assets/servicesbg.jpg'); /* Ensure correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding: 7vh 5vw;
+}
+#serv-right{
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 1vw;
+    border-radius: 10px;
+}
+#serpara{
+    max-width: 24vw;
+    text-align: center;
+    font-size: 2.8vh;
+}
+#check{
+    margin-bottom: 4vh;
+    color: white;
+}
+#srv{
+    font-size: 7.5vh;
+}
+#servlogo{
+    height: 3vh;
+    margin-right: 0.3vw;
+}
+#serv-menu{
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2vh;
+}
+#semi-head{
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: red;
+}
+#serv-left{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 60vw;
+    margin-right: 2vw;
+    border-radius: 10px;
+    margin: 1vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#serv-left:hover .serv-img {
+    content: url('../assets/eng5.jpg'); /* Change image */
+    transition: opacity 0.5s ease-in-out;
+}
+.serv-img{
+    height: 100vh;
+    margin: 3vw;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+#parts{
+    color: red;
+}
+@media (max-width: 768px) {
+    #serv-left {
+        display: none; /* Hide left section */
+    }
+
+    #serv-right {
+        width: 100vw; /* Take full width of the screen */
+        padding: 5vh 5vw; /* Adjust padding for better spacing */
+    }
+
+    #serpara {
+        max-width: 90%; /* Adjust text width for better readability */
+    }
+
+    #serv-menu {
+        margin-top: 5vh; /* Reduce top margin for better spacing */
+    }
+}

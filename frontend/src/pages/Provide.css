@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+.provide-main{
+    
+    display: flex;
+    font-family: Inter Tight;
+    background-image: url('../assets/providebg.jpg'); /* Ensure correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding: 0 5vw;
+}
+#prov-left{
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 1vw;
+    border-radius: 10px;
+}
+#prov-semi-head{
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: red;
+    max-width: 25vw;
+}
+#prov-check{
+    font-size: 5vh;
+    margin-bottom: 4vh;
+    color: white;
+}
+#prov{
+    font-size: 7.5vh;
+}
+#prov-para{
+    max-width: 24vw;
+    text-align: center;
+    font-size: 2.8vh;
+    line-height: 4vh;
+}
+#L1{
+    display: flex;
+    gap: 2vw;
+}
+#L2{
+    display: flex;
+    gap: 2vw;
+}
+#prov-right{
+    max-width: 40vw;
+    margin: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+@media (max-width: 768px) {
+    .provide-main {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align content */
+        height: auto; /* Allow height to adjust based on content */
+        padding: 0; /* Remove extra padding */
+    }
+
+    #prov-left {
+        width: 100%; /* Full width */
+        height: 100vh; /* Full screen height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content */
+        align-items: center;
+        padding: 5vh 5vw; /* Maintain spacing */
+    }
+
+    #prov-semi-head {
+        max-width: 90%; /* Adjust width */
+    }
+
+    #prov-para {
+        max-width: 90%;
+    }
+  
+
+    #prov-right {
+        width: 100%; /* Full width */
+        height: 100vh; /* Full screen height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #L1{
+        display: flex;
+        gap: 2vw;
+        
+    }
+    #L2{
+        display: flex;
+        gap: 2vw;
+    }
+
+    /* Increase card sizes */
+    .small-card, .wide-card {
+        width: 80vw; /* Make the boxes bigger */
+        height: auto; /* Adjust height dynamically */
+    }
+    
+}
+
+@media (max-width: 1024px) {
+    #prov{
+        font-size: 5vh;
+    }
+}
+@media (max-width: 320px) {
+    #prov-right{
+        display: none;
+    }
+}

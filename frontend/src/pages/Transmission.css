@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.transmission {
+    background-image: url('../assets/transbg.jpg'); /* Ensure correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    color: #100D0E;
+}
+
+.trans-left {
+    padding: 2.5vh;
+    border-radius: 3%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+    max-width: 50%;
+    font-family: "Inter Tight", sans-serif;
+    margin-left: 2vh;
+}
+
+.th1 {
+    font-size: 10vh;
+    color: black;
+}
+
+#trans-head {
+    color: red;
+}
+
+#trans-title {
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+}
+
+.th2 {
+    font-size: 2.5vh;
+    max-width: 45vw;
+    text-align: left;
+    margin-top: 2vh;
+    color: #333;
+    text-align: center;
+}
+
+.trans-para {
+    font-size: 2.5vh;
+    max-width: 45vw;
+    text-align: left;
+    margin-top: 2vh;
+    color: #333;
+    text-align: center;
+}
+
+.trans-submit {
+    background-color: red;
+    color: white;
+    font-size: 2.5vh;
+    padding: 1vw;
+    border: none;
+    width: 20vw;
+    margin-top: 4vh;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.trans-submit:hover {
+    background-color: black;
+    color: white;
+    font-weight: 700;
+}
+
+.trans-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .transmission {
+        flex-direction: column; /* ✅ Stack sections vertically */
+        height: auto; /* ✅ Allow content to expand */
+        padding: 5vw; /* ✅ Balanced padding */
+        align-items: center;
+    }
+
+    .trans-left {
+        max-width: 100%; /* ✅ Take full width */
+        text-align: center; /* ✅ Center content */
+        align-items: center; /* ✅ Align properly */
+        margin-left: 0; /* ✅ Remove left margin */
+    }
+
+    .th1 {
+        font-size: 6vh; /* ✅ Reduce size for smaller screens */
+    }
+
+    .th2,
+    .trans-para {
+        font-size: 2.2vh; /* ✅ Adjust font size */
+        max-width: 90vw; /* ✅ Increase width for readability */
+        text-align: center;
+    }
+
+    .trans-submit {
+        width: 50vw; /* ✅ Adjust button size */
+        font-size: 2vh;
+    }
+
+    .trans-right {
+        width: 100%; /* ✅ Full width for form */
+        justify-content: center; /* ✅ Center form */
+        margin-top: 5vh; /* ✅ Add spacing between sections */
+    }
+}

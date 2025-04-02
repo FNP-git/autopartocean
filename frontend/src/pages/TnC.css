@@ -1,0 +1,108 @@
+/* General Styling */
+.tnc-container {
+    max-width: 70vw;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tnc-content {
+    max-width: 1300px;
+    text-align: left;
+    font-family: Inter Tight, sans-serif;
+    
+}
+
+/* Headings */
+.tnc-title {
+    text-align: center;
+    font-family: Inter Tight;
+    color: #b71c1c;
+    font-size: 5vh;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tnc-subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+/* Text Content */
+.tnc-text {
+    font-size: 2.4vh;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: Inter Tight;
+}
+
+.tnc-closing {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Sections */
+.tnc-section {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Titles */
+.tnc-category {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+/* Lists */
+.tnc-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: Inter Tight;
+}
+
+.tnc-list li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 2.4vh;    line-height: 1.6;
+    color: #555;
+    font-family: Inter Tight;
+    margin-bottom: 10px;
+}
+
+/* Important Notes Section */
+.tnc-important {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.tnc-important li {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.tnc-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Inter Tight; 
+}
+
+.tnc-container a:hover {
+    text-decoration: underline;
+    font-family: Inter Tight;
+}

@@ -1,0 +1,216 @@
+/* Background Image & Layout */
+#home {
+  background-image: url('../assets/bghome.jpg'); /* Ensure correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  color: #100D0E;
+  position: relative;
+  padding: 2vw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1; /* Ensures content stays on top */
+}
+
+/* Keep Call Us, Welcome & Form Styling Intact */
+#left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter Tight", sans-serif;
+  margin-left: 2vh;
+  z-index: 2; 
+  
+}
+
+#wlcm {
+  margin-top: 5vh;
+  font-size: 2vw;
+  color: #fff;
+}
+
+#txt {
+  font-size: 10vh;
+  color: white;
+}
+
+.call {
+  margin-top: 8vh;
+  color: #fff;
+}
+
+#num {
+  color: red;
+  font-size: 4vh;
+}
+
+.para {
+  max-width: 40.5vw;
+  align-items: normal;
+  font-size: 2.63vh;
+  margin-top: 2vh;
+  text-align: center;
+  color: white;
+}
+
+/* Fixed Slider - Below Navbar */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: #fff;
+  padding: 1vh 0;
+  /* Keeps it below navbar */
+  z-index: 0;
+}
+
+/* Moving Track - Duplicated for Infinite Effect */
+.slider-track {
+  display: flex;
+  gap: 5vw;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
+
+.slider-track:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+
+/* Individual Items */
+.item {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: #100D0E;
+  font-family: "Inter Tight", sans-serif;
+  padding: 1vh 2vw;
+  display: inline-block;
+}
+.item2 {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: red;
+  font-family: "Inter Tight", sans-serif;
+  padding: 1vh 2vw;
+  display: inline-block;
+}
+
+/* Infinite Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.submit{
+  background-color: red;
+  color: white;
+  font-size: 2.5vh;
+  padding: 1vw;
+  border: none;
+  width: 20vw;
+  margin-top: 4vh;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color:white;
+  color: red;
+  font-weight: 700;
+}
+#part{
+  color: red;
+}
+.imp{
+  color: red;
+}
+@media (max-width: 900px) {
+  #home {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    height: auto; /* Allow height to adjust */
+    padding: 5vw 5vw; /* Ensure consistent spacing */
+  }
+
+  /* Make left section take full width with proportional scaling */
+  #left {
+    width: 100%; /* Left content takes 80% of screen width */
+    text-align: center;
+    padding-bottom: 4vh;
+  }
+
+  /* Scale down text proportionally */
+  #wlcm {
+    font-size: 5vw; /* Adjust size dynamically */
+  }
+
+  #txt {
+    font-size: 8vw; /* Adjust size dynamically */
+    max-width: 80%; /* Keep text width within 80% */
+    margin: 0 auto; /* Center text */
+  }
+
+  .para {
+    max-width: 90%; /* Ensure paragraph takes 70% width */
+    font-size: 3vw; /* Adjust font size */
+    text-align: center;
+    margin: 2vh auto;
+  }
+
+  /* Move form below and scale properly */
+  #right {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center align form */
+    padding-top: 4vh;
+  }
+
+  .form-container {
+    width: 70%; /* Form takes 70% width, leaving 15% space on each side */
+    max-width: 600px; /* Ensure it doesn't get too large */
+    margin: 0 auto;
+  }
+
+  /* Scale the submit button to 30% width */
+  .submit {
+    width: 30vw; /* Submit button takes 30% of the screen width */
+    font-size: 3vw;
+    padding: 2vw;
+    margin-top: 3vh;
+    border-radius: 1vw;
+  }
+}
+@media (max-width: 900px) {
+  .item {
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #100D0E;
+    font-family: "Inter Tight", sans-serif;
+    padding: 1vh 2vw;
+    display: inline-block;
+  }
+  .item2 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: red;
+    font-family: "Inter Tight", sans-serif;
+    padding: 1vh 2vw;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 320px) {
+  #num {
+    color: red;
+    font-size: 3vh;
+  }
+  .call {
+    margin-top: 8vh;
+    font-size: 2.9vh;
+  }
+}

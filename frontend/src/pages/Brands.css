@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+.brands-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin:3vh;
+    background-color: white;
+    padding: 1rem 0;
+  }
+  .brands-container h1 {
+    font-family: Inter Tight;
+    font-size: 8vh;
+    text-align: center;
+    margin-bottom: 1rem; /* Add space between the heading and the sliders */
+  }
+  .brands-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .bhd{
+    font-family: Inter Tight;
+    font-size: 8vh;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

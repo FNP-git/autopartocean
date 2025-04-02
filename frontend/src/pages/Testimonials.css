@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.testimonials-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Inter Tight", sans-serif; /* Restored the font */
+  background-image: url("../assets/testbg.jpg"); /* Restored background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5vh 5vw; /* Added padding to prevent text cut-off */
+}
+
+.testimonials-heading {
+  font-size: 6vh;
+  margin-bottom: 4vh;
+  color: white ;
+}
+
+#spn {
+  color: red;
+}
+
+.testimonials-container {
+  display: flex;
+  gap: 3vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4vh 5vw; /* Added padding to prevent text from cutting off */
+}
+
+/* Tablet Screens */
+@media (max-width: 1024px) {
+  .testimonials-container {
+      padding: 6vh 8vw; /* Increased padding */
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .testimonials-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 6vh 10vw; /* More padding to prevent cut-off */
+      width: 100%; /* Ensuring full width */
+  }
+
+  .testimonials-heading {
+      font-size: 5vh; /* Slightly smaller heading for smaller screens */
+  }
+}

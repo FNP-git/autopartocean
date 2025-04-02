@@ -1,0 +1,48 @@
+.card {
+  margin-top: 3vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 2vh;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
+  padding: 3vh;
+  width: 15vw;
+  height: 26vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+.card-text {
+  font-size: 5vh;
+  font-weight:bolder;
+  color: black;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 50vw; /* Increase width for better visibility */
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 4vh; /* Slightly increase padding */
+  }
+
+  .card-text {
+    font-size: 4vh; /* Slightly increase text size for readability */
+  }
+
+}
+@media (max-width: 425px) {
+  .card {
+    width: 40vw; /* Increase width for better visibility */
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 4vh; /* Slightly increase padding */
+  }
+
+  .card-text {
+    font-size: 3vh; /* Slightly increase text size for readability */
+  }
+}

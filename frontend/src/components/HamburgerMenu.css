@@ -1,0 +1,122 @@
+/* Hide the hamburger icon by default */
+.hamburger-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 19; /* Higher than the menu overlay */
+    display: none; /* Hidden by default */
+    
+}
+
+/* Full-screen menu overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;  /* Initially hidden */
+    width: 100vw;
+    height: 100vh;
+    background: white; /* Translucent white background */
+    transition: right 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20; /* Lower than the close button */
+}
+
+/* Open state */
+.menu-overlay.open {
+    right: 0;
+}
+
+/* Menu content */
+.menu-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything */
+     /* Reduce space between elements */
+}
+
+/* Logo inside the menu */
+#lgo {
+    height: 40vh;
+    margin-top: 25vh; /* Move the logo closer to the top */
+}
+
+/* Menu items */
+.menu-content ul {
+    list-style: none;
+
+}
+
+.menu-content ul li {
+    margin: 25px 0; /* Increased vertical spacing */
+}
+
+.menu-content ul li a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    font-family: "Inter Tight", sans-serif;
+}
+
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 35; /* Ensure it stays above everything */
+}
+
+/* Add bottom margin to push content up */
+#elm {
+    margin-bottom: 33vh;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Show hamburger icon only on small screens */
+    .hamburger-icon {
+        display: block;
+    }
+    #lgo {
+        height: 40vh;
+        margin-top: 25vh; /* Move the logo closer to the top */
+    }
+
+    /* Hide regular navbar on small screens */
+    .nav-menu {
+        display: none;
+    }
+}
+@media (max-width: 440px) {
+    /* Show hamburger icon only on small screens */
+    .hamburger-icon {
+        display: block;
+    }
+
+    /* Hide regular navbar on small screens */
+    .nav-menu {
+        display: none;
+    }
+    .menu-content ul li a {
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+        font-family: "Inter Tight", sans-serif;
+    }
+} 
+/* Hide the hamburger icon when the menu is open */
+.menu-overlay.open + .hamburger-icon {
+    display: none;
+}
