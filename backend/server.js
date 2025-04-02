@@ -7,7 +7,6 @@ const app = express();
 
 // Minimal CORS Configuration
 const allowedOrigins = [
-  'https://vercel.com/fnps-projects/autopartocean/53wQ9BG7ng1hmvibaSqmFYtUccNi', // Vercel frontend
   'https://autopartocean.com',        // Your production domain
   'https://www.autopartocean.com'     // WWW variant
 ];
@@ -19,6 +18,12 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
 app.use("/api/form", formRoutes);
 
 const PORT = process.env.PORT || 80;
