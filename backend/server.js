@@ -9,9 +9,9 @@ const app = express();
 const allowedOrigins = [
   'https://autopartocean.com',        // Your production domain
   'https://www.autopartocean.com',
-  'https://autopartocean-eight.vercel.app/',
-  'https://autopartocean-fnps-projects.vercel.app/',
-  'https://autopartocean-git-master-fnps-projects.vercel.app/'     // WWW variant
+  'https://autopartocean-eight.vercel.app',
+  'https://autopartocean-fnps-projects.vercel.app',
+  'https://autopartocean-git-master-fnps-projects.vercel.app'     // WWW variant
 ];
 
 app.use(cors({
