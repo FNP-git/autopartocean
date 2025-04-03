@@ -11,13 +11,13 @@ const allowedOrigins = [
   'https://www.autopartocean.com',
   'https://autopartocean-eight.vercel.app',
   'https://autopartocean-fnps-projects.vercel.app',
-  'https://autopartocean-git-master-fnps-projects.vercel.app'     // WWW variant
+  'https://autopartocean-git-master-fnps-projects.vercel.app',     // WWW variant
 ];
 
 app.use(cors({
   origin: allowedOrigins,
-  methods: ['POST', 'OPTIONS'],       // Only needed methods
-  credentials: true
+  methods: ['GET','POST', 'OPTIONS'],       // Only needed methods
+  credentials: true,
 }));
 
 app.use(express.json());
@@ -26,6 +26,10 @@ app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   console.log("Origin:", req.headers.origin);
   next();
+});
+
+app.get("/", (req, res) => {
+  res.send("AutoPart Ocean Backend is Running!");
 });
 
 app.use("/api/form", formRoutes);
