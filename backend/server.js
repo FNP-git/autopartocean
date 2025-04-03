@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const formRoutes = require("./backend/src/routes/formRoutes");
+const formRoutes = require("./src/routes/formRoutes");
 
 const app = express();
 
