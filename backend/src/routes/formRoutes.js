@@ -70,7 +70,7 @@ router.post("/", validateForm, async (req, res) => {
   // Email options including the hidden field value
   const mailOptions = {
     from: `"AutoPart Ocean Support" <devops@fnpglobal.com>`,
-    to: "autopartslead9@gmail.com",
+    to: "leads@autopartocean.com",
     subject: "New Form Submission AutoPart Ocean",
     text: 
       `Company": ${leadLabel}\n` +
