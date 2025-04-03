@@ -57,6 +57,10 @@ const validateForm = [
 
 ];
 
+router.get("/", (req, res) => {
+  res.json({ message: "API is working!" });
+});
+
 // Form submission route
 router.post("/", validateForm, async (req, res) => {
   const errors = validationResult(req);
