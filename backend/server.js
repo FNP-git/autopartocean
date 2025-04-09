@@ -11,6 +11,8 @@ const allowedOrigins = [
   'https://www.autopartocean.com',
   'https://autopartocean-eight.vercel.app',
   'https://autopartocean-fnps-projects.vercel.app',
+  'http://localhost',
+  'http://localhost:3001',
   'https://autopartocean-git-master-fnps-projects.vercel.app',
 ];
 

@@ -79,7 +79,7 @@ const Form = () => {
     setErrors({}); // Clear previous errors
 
     try {
-      const response = await fetch("https://autopartocean.com/api", {
+      const response = await fetch("/api/form/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
