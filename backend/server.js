@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 app.use("/api/form", formRoutes);
 
 // Only changes made below this line:
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Updated server startup with error handling
 const server = app.listen(PORT, '0.0.0.0', () => {
