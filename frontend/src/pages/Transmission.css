@@ -96,7 +96,7 @@ html, body {
     justify-content: center;
     width: 50%;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .transmission {
         flex-direction: column; /* ✅ Stack sections vertically */
         height: auto; /* ✅ Allow content to expand */

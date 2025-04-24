@@ -23,7 +23,7 @@
   font-weight:bolder;
   color: black;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .card {
     width: 50vw; /* Increase width for better visibility */
     height: auto; /* Allow height to adjust dynamically */

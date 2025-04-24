@@ -85,7 +85,7 @@ html , body{
 #parts{
     color: red;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #serv-left {
         display: none; /* Hide left section */
     }
@@ -101,5 +101,9 @@ html , body{
 
     #serv-menu {
         margin-top: 5vh; /* Reduce top margin for better spacing */
+    }
+    #check{
+        font-size: 4vh;
+        margin-bottom: 0;
     }
 }

@@ -75,7 +75,7 @@
 }
 
 /* 📱 Tablet & Mobile Fix */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .map-container {
         width: 90vw; 
         height: 40vh; 

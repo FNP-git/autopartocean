@@ -47,6 +47,9 @@ html, body {
   .testimonials-container {
       padding: 6vh 8vw; /* Increased padding */
   }
+  .testimonials-heading {
+    font-size: 5vh; /* Slightly smaller heading for smaller screens */
+}
 }
 
 /* Mobile Screens */

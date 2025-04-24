@@ -129,7 +129,7 @@
 .imp{
   color: red;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   #home {
     flex-direction: column; /* Stack sections vertically */
     align-items: center;
