@@ -27,7 +27,7 @@ const ContactUs = () => {
           <div>
             <h3 className="hdngs">Location</h3>
             <div className="lctn">
-            <p><strong>Head Office:</strong> 287 Grove St ,Worcester, MA 01605</p>
+            <p><strong>Head Office:</strong>287 Grove St ,Worcester, MA 01605</p>
             <p><strong>Sales Office:</strong> 225 Cedal hills St Marlborough, MA 01752</p>
             <p><strong>Sales Office:</strong> 197M Boston Post Rd WMarlborough, MA 01752</p>
             </div>
