@@ -8,6 +8,7 @@ import ContactUs from '../pages/ContactUs';
 import Popup from '../components/Popup';
 import Brands from './Brands';
 import CallButton from '../components/CallButton';
+import dmca from '../assets/dmca.png';
 
 const Homepg = () => {
   return (
@@ -51,9 +52,14 @@ const Homepg = () => {
           <h3 id='wlcm'>WELCOME TO</h3>
           <h1 id='txt'>AUTO<span id='part'>PART</span>OCEAN</h1>
           <h5 className='para'>At AutoParts Ocean, we bring your car back to life with <span className='imp'>top-quality used engines, transmissions, and small parts</span>. Every part is tested for performance, reliability, and longevity, <span className='imp'>delivered straight to your doorstep with free shipping!</span> Drive with confidence, knowing you’re getting the best for less.</h5>
+          <div id="cl-dmca">
           <a href="tel:+1-888-819-5651">
             <button className='submit'>Call Now</button>
           </a>
+          <a href="https://www.dmca.com/Protection/Status.aspx?ID=2adc4b2f-3d66-4b9b-9cf1-350789652c71&refurl=https://autopartocean.com/" target="_blank" rel="noopener noreferrer">
+            <img id='dmca' src={dmca} alt="dmca verified" />
+          </a>
+          </div>
         </div>
         <div id="rght">
           <Form />
