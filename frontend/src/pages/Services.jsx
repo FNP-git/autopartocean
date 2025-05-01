@@ -29,9 +29,9 @@ const Services = () => {
             We ensure top quality and reliable performance for your vehicle.
           </p>
           <div id="serv-menu">
-            <h2><img id='servlogo' src={L1} alt="Used Engine" loading='lazy' /> Used Engine</h2>
-            <h2><img id='servlogo' src={L2} alt="Used Transmission" loading='lazy' /> Used Transmission</h2>
-            <h2><img id='servlogo' src={L3} alt="Installation" loading='lazy' /> Engine and Transmission <br /> Installation</h2>
+            <h2 id='srvc'><img id='servlogo' src={L1} alt="Used Engine" loading='lazy' /> Used Engine</h2>
+            <h2 id='srvc'><img id='servlogo' src={L2} alt="Used Transmission" loading='lazy' /> Used Transmission</h2>
+            <h2 id='srvc'><img id='servlogo' src={L3} alt="Installation" loading='lazy' />New Engine and Transmission</h2>
           </div>
         </div> {/* ✅ Closing div for serv-right */}
       </div> {/* ✅ Closing div for service-main */}

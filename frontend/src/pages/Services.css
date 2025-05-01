@@ -107,3 +107,15 @@ html , body{
         margin-bottom: 0;
     }
 }
+@media (max-width: 500px){
+ #srv{
+    font-size: 5vh;
+ }
+ #check{
+    font-size: 3vh;
+    margin-bottom: 0;
+ }
+ #srvcontainer{
+    font-size: 2vh;
+ }
+}
