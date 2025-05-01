@@ -236,3 +236,8 @@
     height: 7vh;
   }
 }
+@media (max-width: 600px) {
+  #dmca{
+    height: 7vh;
+  }
+}
