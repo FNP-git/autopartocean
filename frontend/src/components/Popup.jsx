@@ -24,7 +24,7 @@ const Popup = () => {
       <div className="popup-overlay" onClick={handleClosePopup}>
         <div className="popup-container" onClick={(e) => e.stopPropagation()}>
           <button className="popup-close" onClick={handleClosePopup}>✖</button>
-          <img src={popupImage} alt="tax season sale" className="popup-image" onClick={(e) => e.stopPropagation()} />
+          <img src={popupImage} alt="tax season sale" className="popup-image" onClick={(e) => e.stopPropagation()} loading='lazy' />
         </div>
       </div>
     )

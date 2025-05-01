@@ -38,7 +38,7 @@ const SliderTwo = ({ images, onImageClick }) => {
               onClick={handleLinkClick} // Scroll to the top and handle the click
               className="slider-link"
             >
-              <img src={item.src} alt={item.brandName} className='twoimg' />
+              <img src={item.src} alt={item.brandName} className='twoimg' loading='lazy' />
             </Link>
               <p className='twopara'>Used {item.brandName} <br /> Engines Transmission</p>
           </div>

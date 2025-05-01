@@ -10,7 +10,8 @@ const Footer = () => {
         <div id="foot">
             <h1 id='foot-text'>© 2019 AutoPartOcean. All Rights Reserved.</h1>
             <h2 id='foot-text'>AutoPartOcean is an entity of Revenue Dealer LLC</h2>
-        {/* <a href="">
+            <div id="socials">
+            <a href="">
           <img src={fb} alt="facebook" />
         </a>
         <a href="">
@@ -18,8 +19,10 @@ const Footer = () => {
         </a>
         <a href="">
           <img src={x} alt="x" />
-        </a> */}
+        </a>
+            </div>
         </div>
+        
     </>
   )
 }

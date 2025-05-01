@@ -6,7 +6,7 @@ const CallButton = () => {
   return (
     <a href="tel:+18888195651" className="call-button">
       <button className="call-btn">
-        <img src={phone} alt="Call Us" /> {/* Replace with your phone icon */}
+        <img src={phone} alt="Call Us" loading='lazy' /> {/* Replace with your phone icon */}
       </button>
       <div className="call-text">Call Us</div> {/* Text below the button */}
     </a>

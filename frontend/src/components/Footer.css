@@ -23,3 +23,7 @@ html , body{
     margin-bottom: 0.5vh;
     font-size: 2.2vh;
 }
+#social{
+    display: flex;
+    gap: 2vw;
+}

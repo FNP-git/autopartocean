@@ -57,7 +57,7 @@ const Homepg = () => {
             <button className='submit'>Call Now</button>
           </a>
           <a href="https://www.dmca.com/Protection/Status.aspx?ID=2adc4b2f-3d66-4b9b-9cf1-350789652c71&refurl=https://autopartocean.com/" target="_blank" rel="noopener noreferrer">
-            <img id='dmca' src={dmca} alt="dmca verified" />
+            <img id='dmca' src={dmca} alt="dmca verified" loading='lazy' />
           </a>
           </div>
         </div>

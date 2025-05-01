@@ -10,9 +10,9 @@ const Header = () => {
   return (
     <>
         <div id="header">
-        <img id='logo' src={ocean_logo} alt="Autoparts Ocean Logo" />
+        <img id='logo' src={ocean_logo} alt="Autoparts Ocean Logo" loading='lazy' />
         <a href="https://www.bbb.org/us/ma/marlborough/profile/used-auto-parts/auto-part-ocean-0021-561291" target="_blank" rel="noopener noreferrer">
-          <img id='bbb' src={bbb_logo} alt="bbb accredited" />
+          <img id='bbb' src={bbb_logo} alt="bbb accredited" loading='lazy' />
         </a>
         <a 
   href="https://www.trustpilot.com/review/autopartocean.com" 
