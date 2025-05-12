@@ -9,7 +9,7 @@ html, body{
 }
 #header{
     width: 100%;
-    background-color: #F5F5F5;
+    background-color: #000112;
     display: flex;
     flex-wrap: nowrap;
     padding: 1.5vh;
@@ -25,7 +25,7 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Inter Tight";
+    font-family: "Poppins";
     width: 30vw;  /* 30% of viewport width */
     height: 10vh; /* 10% of viewport height */
     max-width: 100%;
@@ -33,6 +33,7 @@ html, body{
 }
 
 #sp{
+    color: #fff;
     font-size: 2.5vh;
 }
 
@@ -71,7 +72,12 @@ html, body{
     margin: 0; /* Ensure no external margins */
     vertical-align: middle; /* Better inline alignment */
   }
-  
+  .nmbr {
+  text-decoration: none;
+  font-weight: 700;
+  color: inherit; /* keeps the same color as before */
+}
+
   .trustpilot-button:hover {
     background: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -104,7 +110,7 @@ html, body{
 
 .nmbr{
     color: red;
-    font-size: 3vw;
+    font-size: 2.2vw;
     animation: vibrate 1s ease-in-out 2s infinite alternate;
 }
 

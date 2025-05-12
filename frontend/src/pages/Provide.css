@@ -10,8 +10,8 @@ html , body{
 .provide-main{
     
     display: flex;
-    font-family: Inter Tight;
-    background-image: url('../assets/providebg.jpg'); /* Ensure correct path */
+    font-family: Poppins;
+    background-image: url('../assets/providee.png'); /* Ensure correct path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@ html , body{
     padding: 0 5vw;
 }
 #prov-left{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     width: 35vw;

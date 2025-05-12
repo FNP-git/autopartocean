@@ -51,7 +51,7 @@
   .call-text {
     margin-left: 1vw; /* Space between the button and text */
     font-size: 3vh;
-    font-family: Inter Tight; /* Use the same font as the button */
+    font-family: Poppins; /* Use the same font as the button */
     color: black; /* Match button color */
     background-color: #fff;
     border-radius: 5px;

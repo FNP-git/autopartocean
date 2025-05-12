@@ -1,5 +1,7 @@
 import React from 'react'
-import ocean_logo from '../assets/ocean_logo.png'
+import { NavLink } from 'react-router-dom'; 
+import apo from '../assets/apo.svg'
+
 import bbb_logo from '../assets/bbb.png'
 import './Header.css'
 import HamburgerMenu from './HamburgerMenu'
@@ -10,8 +12,9 @@ const Header = () => {
   return (
     <>
         <div id="header">
-        <img id='logo' src={ocean_logo} alt="Autoparts Ocean Logo" loading='lazy' />
-        <a href="https://www.bbb.org/us/ma/marlborough/profile/used-auto-parts/auto-part-ocean-0021-561291" target="_blank" rel="noopener noreferrer">
+<NavLink to="/">
+  <img id='logo' src={apo} alt="Autoparts Ocean Logo" loading='lazy' />
+</NavLink>        <a href="https://www.bbb.org/us/ma/marlborough/profile/used-auto-parts/auto-part-ocean-0021-561291" target="_blank" rel="noopener noreferrer">
           <img id='bbb' src={bbb_logo} alt="bbb accredited" loading='lazy' />
         </a>
         <a 
@@ -29,9 +32,10 @@ const Header = () => {
           <HamburgerMenu/>
         </div>
         <div id="header-part2">
-            <h4 id='sp'>SPEAK WITH A SPECIALIST NOW</h4>
-            <h2 className='nmbr'>+1-888-819-5651</h2>
-        </div>
+  <h4 id='sp'>SPEAK WITH A SPECIALIST NOW</h4>
+  <a href="tel:+18888195651" className="nmbr">+1-888-819-5651</a>
+</div>
+
          
         </div>
     </>

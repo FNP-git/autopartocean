@@ -6,5 +6,16 @@
 html , body{
     height: 100%;
     width: 100%;
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+.cursor {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: #FF0000;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: all linear 0.05s;
+  }

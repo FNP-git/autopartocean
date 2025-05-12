@@ -10,7 +10,7 @@ html, body {
 }
 
 .engine {
-    background-image: url('../assets/engbg.jpg'); /* Ensure correct path */
+    background-image: url('../assets/engine.png'); /* Ensure correct path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@ html, body {
 }
 
 .eng-left {
-    background-color: rgba(255, 255, 255, 0.75); 
+    background-color: rgba(0, 0, 0, 0.4); 
     padding: 2.5vh;
     border-radius: 3%;
     display: flex;
@@ -34,13 +34,13 @@ html, body {
     text-align: center;
     align-items: flex-start;
     max-width: 50%;
-    font-family: "Inter Tight", sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-left: 2vh;
 }
 
 .eh1 {
     font-size: 10vh;
-    color: black;
+    color: white;
 }
 
 #eng-head {
@@ -59,8 +59,9 @@ html, body {
     max-width: 45vw;
     text-align: left;
     margin-top: 2vh;
-    color: #333;
+    color: white;
     text-align: center;
+    
 }
 
 .eng-para {
@@ -68,27 +69,55 @@ html, body {
     max-width: 45vw;
     text-align: left;
     margin-top: 2vh;
-    color: #333;
+    color: white;
+    font-weight: 500;
     text-align: center;
 }
 
 .eng-submit {
-    background-color: red;
-    color: white;
-    font-size: 2.5vh;
-    padding: 1vw;
-    border: none;
-    width: 20vw;
-    margin-top: 4vh;
-    border-radius: 0.5vw;
-    cursor: pointer;
+  position: relative;
+  background-color: red;
+  font-size: 2.5vh;
+  padding: 1vw;
+  border: none;
+  width: 20vw;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 3vh;
 }
 
-.eng-submit:hover {
-    background-color: black;
-    color: white;
-    font-weight: 700;
+.eng-submit::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: white;
+  z-index: 0;
+  transition: height 0.6s ease-in-out;
 }
+
+.eng-submit:hover::before {
+  height: 100%;
+}
+
+.eng-submit-text {
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+  transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.eng-submit:hover .eng-submit-text {
+  color: red;
+  transform: scale(1.1);
+}
+
 
 .eng-right {
     display: flex;

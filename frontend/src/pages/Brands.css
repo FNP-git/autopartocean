@@ -8,15 +8,16 @@ html , body{
     width: 100%;
 }
 .brands-container {
+    background-image: url("../assets/apo-wmark.png");
+
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    margin:3vh;
     background-color: white;
     padding: 1rem 0;
   }
   .brands-container h1 {
-    font-family: Inter Tight;
+    font-family: Poppins;
     font-size: 6vh;
     text-align: center;
     margin-bottom: 1rem; /* Add space between the heading and the sliders */
@@ -26,7 +27,7 @@ html , body{
     margin-bottom: 2rem;
   }
   .bhd{
-    font-family: Inter Tight;
+    font-family: Poppins;
     font-size: 8vh;
     text-align: center;
     margin-bottom: 20px;

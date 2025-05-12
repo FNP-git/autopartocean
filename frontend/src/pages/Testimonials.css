@@ -1,67 +1,119 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.testimonials-section {
+  background-image: url("../assets/apo-wmark.png");
+  height: auto;
+  background-color: white;
+  position: relative;
+  padding: 5vh 0;
+  overflow: hidden;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
-.testimonials-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#testimonials-head {
   text-align: center;
-  font-family: "Inter Tight", sans-serif; /* Restored the font */
-  background-image: url("../assets/testbg.jpg"); /* Restored background */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  min-height: 100vh;
-  padding: 5vh 5vw; /* Added padding to prevent text cut-off */
-}
-
-.testimonials-heading {
   font-size: 6vh;
-  margin-bottom: 4vh;
-  color: white ;
+  color: #000;
+  z-index: 10;
 }
 
 #spn {
   color: red;
 }
 
-.testimonials-container {
+#tstbg {
+  width: 100%;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.clients-container {
   display: flex;
-  gap: 3vw;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  padding: 4vh 5vw; /* Added padding to prevent text from cutting off */
+  position: relative;
+  z-index: 5;
 }
 
-/* Tablet Screens */
+.slider-window {
+  width: 90vw;
+  overflow: hidden;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 2vw;
+}
+
+.cards-wrapper.scrollable {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cards-wrapper.animate {
+  transition: transform 0.6s ease-in-out;
+}
+
+.test-card-container {
+  flex: 0 0 25%;
+  scroll-snap-align: center;
+}
+
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem; /* adjust for better visual alignment */
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.arrow-button:hover {
+  background: rgba(255, 0, 0, 0.6);
+}
+
+.arrow-button.left {
+  left: 1rem;
+}
+
+.arrow-button.right {
+  right: 1rem;
+}
+
+/* Tablet & below */
 @media (max-width: 1024px) {
-  .testimonials-container {
-      padding: 6vh 8vw; /* Increased padding */
+  #testimonials-head {
+    font-size: 5vh;
   }
-  .testimonials-heading {
-    font-size: 5vh; /* Slightly smaller heading for smaller screens */
-}
+  .arrow-button {
+    display: none;
+  }
 }
 
-/* Mobile Screens */
+/* Mobile screens */
 @media (max-width: 768px) {
-  .testimonials-container {
-      flex-direction: column;
-      align-items: center;
-      padding: 6vh 10vw; /* More padding to prevent cut-off */
-      width: 100%; /* Ensuring full width */
+  .test-card-container {
+    flex: 0 0 75%;
   }
-
-  .testimonials-heading {
-      font-size: 5vh; /* Slightly smaller heading for smaller screens */
+  #testimonials-head {
+    font-size: 4.5vh;
+    margin-top: 6vh;
+  }
+  .clients-container {
+    height: auto;
   }
 }

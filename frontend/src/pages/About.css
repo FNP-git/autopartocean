@@ -9,6 +9,8 @@ html , body{
 }
 /* General Styling */
 .about-container {
+      background-image: url("../assets/apo-wmark.png");
+
     width: 100%;
     display: flex;
     justify-content: center;
@@ -16,10 +18,11 @@ html , body{
     padding: 50px 20px;
 }
 
+
 .about-content {
     max-width: 1100px;
     text-align: left;
-    font-family: Inter Tight, sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 /* Headings */

@@ -4,7 +4,7 @@ import SliderOne from '../components/SliderOne';
 import SliderTwo from '../components/SliderTwo';
 import { useNavigate } from 'react-router-dom';
 
-// First cluster of 12 images
+// Brand imports
 import acura from '../assets/acura.webp';
 import alfaromeo from '../assets/alfaromeo.webp';
 import audi from '../assets/audi.webp';
@@ -18,7 +18,6 @@ import deawoo from '../assets/deawoo.webp';
 import diahatsu from '../assets/diahatsu.webp';
 import dodge from '../assets/dodge.webp';
 
-// Second cluster of 12 images
 import ford from '../assets/ford.webp';
 import geo from '../assets/geo.webp';
 import gmc from '../assets/gmc.webp';
@@ -32,7 +31,6 @@ import kia from '../assets/kia.webp';
 import landrover from '../assets/landrover.webp';
 import lexus from '../assets/lexus.webp';
 
-// Third cluster of 12 images
 import mazda from '../assets/mazda.webp';
 import mercedes from '../assets/mercedes.webp';
 import mini from '../assets/mini.webp';
@@ -47,7 +45,6 @@ import toyota from '../assets/toyota.webp';
 import volvo from '../assets/volvo.webp';
 
 const Brands = () => {
-  // First cluster for SliderOneImages
   const sliderOneImages = [
     { src: acura, brandName: 'Acura' },
     { src: alfaromeo, brandName: 'Alfaromeo' },
@@ -63,7 +60,6 @@ const Brands = () => {
     { src: dodge, brandName: 'Dodge' },
   ];
 
-  // Second cluster for SliderTwoImages
   const sliderTwoImages = [
     { src: ford, brandName: 'Ford' },
     { src: geo, brandName: 'Geo' },
@@ -79,7 +75,6 @@ const Brands = () => {
     { src: lexus, brandName: 'Lexus' },
   ];
 
-  // Third cluster for SliderThreeImages
   const sliderThreeImages = [
     { src: mazda, brandName: 'Mazda' },
     { src: mercedes, brandName: 'Mercedes' },
@@ -95,17 +90,16 @@ const Brands = () => {
     { src: volvo, brandName: 'Volvo' },
   ];
 
-  // Scroll-to-top on image click
   const handlePageClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="brands-container">
-        <h1 className='bhd'>OUR BRANDS</h1>
-      <SliderOne images={sliderOneImages}  />
-      <SliderTwo images={sliderTwoImages}  />
-      <SliderOne images={sliderThreeImages}  />
+    <div className="brands-container fade-up">
+      <h1 className="bhd fade-up">OUR BRANDS</h1>
+      <div className="fade-up"><SliderOne images={sliderOneImages} /></div>
+      <div className="fade-up"><SliderTwo images={sliderTwoImages} /></div>
+      <div className="fade-up"><SliderOne images={sliderThreeImages} /></div>
     </div>
   );
 };

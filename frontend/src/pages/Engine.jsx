@@ -1,11 +1,15 @@
 import React from 'react';
 import Form from '../components/Form';
 import './Engine.css';
+import useScrollAnimate from '../hooks/useScrollAnimate';
+
 
 const Engine = () => {
+    useScrollAnimate(['.fade-up', '.slide-left', '.slide-right', '.zoom-in']);
+
   return (
     <div className="engine">
-      <div className="eng-left">
+      <div className="eng-left fade-up">
         <div id="eng-title">
           <h1 className='eh1'>Used <span id='eng-head'>Engine</span></h1>
         </div>
@@ -17,11 +21,14 @@ const Engine = () => {
             Every engine comes with a performance guarantee, ensuring longevity and reliability. Get free shipping and hassle-free installation support when you order from us.
           </p>
           <a href="tel:+1-888-819-5651">
-            <button className='eng-submit'>Call Now</button>
-          </a>
+  <button className="eng-submit">
+    <span className="eng-submit-text">Call Now</span>
+  </button>
+</a>
+
         </div>
       </div>
-      <div className="eng-right">
+      <div className="eng-right fade-up">
         <Form />
       </div>
     </div>

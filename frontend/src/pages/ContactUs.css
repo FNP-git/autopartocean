@@ -7,7 +7,7 @@
     align-items: center;
     width: 100vw;
     min-height: 100vh; /* ✅ Allow content to expand naturally */
-    font-family: Inter Tight;
+    font-family: Poppins;
 }
 
 .map-container {
@@ -26,7 +26,8 @@
 
 .contact-container {
     width: 75vw;
-    background: white;
+
+    background-color: white;    
     padding: 3vh 3vw;
     border-radius: 1vw;
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);

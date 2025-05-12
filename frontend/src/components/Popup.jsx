@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Popup.css";
-import popupImage from "../assets/popimg.jpg"; // Replace with your image path
+import popupImage from "../assets/popimg.png"; // Replace with your image path
 
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);

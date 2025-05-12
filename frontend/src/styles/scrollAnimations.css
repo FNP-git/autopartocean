@@ -1,0 +1,129 @@
+/* === KEYFRAMES === */
+
+/* Fade Up */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Down */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate In */
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* === BASE CLASSES === */
+
+/* Fade Up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.fade-up.visible {
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Fade Down */
+.fade-down {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+.fade-down.visible {
+  animation: fadeDown 1s ease forwards;
+}
+
+/* Slide Left */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-100vw);
+}
+.slide-left.visible {
+  animation: slideInLeft 1s ease forwards;
+}
+
+/* Slide Right */
+.slide-right {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+.slide-right.visible {
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Zoom In */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.zoom-in.visible {
+  animation: zoomIn 1s ease forwards;
+}
+
+/* Rotate In */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+.rotate-in.visible {
+  animation: rotateIn 1s ease forwards;
+}

@@ -1,83 +1,103 @@
 /* Reset and Global Styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scroll */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
 /* Navbar */
 .nav-menu {
-    background-color: #100D0E;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Inter Tight", sans-serif;
-    gap: 5vw; /* Reduce excessive spacing */
-    height: 7vh;
-    width: 100%;
-    position: relative;
-    z-index: 1000;
-    overflow: visible; /* Allows dropdown to overflow without affecting navbar */
+  background-color: #000112;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  gap: 5vw; /* Reduce excessive spacing */
+  height: 7vh;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  overflow: visible; /* Allows dropdown to overflow without affecting navbar */
+}
+
+/* Navbar Items + Dropdown Trigger Styling with Hover Fill Effect */
+.hm, .dropdown-title, .itm {
+  position: relative;
+  font-size: 1.3vw;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  background: linear-gradient(to right, red 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.4s ease-in-out;
+}
+
+
+.hm:hover, .dropdown-title:hover, .itm:hover {
+  background-position: 0%;
+}
+
+
+
+/* Red fill animation background */
+.hm::before, .dropdown-title::before, .itm::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: red;
+  z-index: -1;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Hover state activates the fill effect */
+
+.hm:hover, .dropdown-title:hover, .itm:hover {
+  color: black;
+  font-weight: 600;
 }
 
 /* Dropdown */
 .dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 /* Dropdown Menu */
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #100D0E;
-    min-width: 250px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 2000; /* Ensures dropdown stays above other elements */
-    display: flex;
-    flex-direction: column;
-    padding: 5px 0;
-    border-radius: 5px;
-    text-align: left;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #100D0E;
+  min-width: 250px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  border-radius: 5px;
+  text-align: left;
 }
 
-/* Make dropdown items white */
-.itm {
-    color: white; /* White text */
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color on hover */
-.itm:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: red;
-}
-
-/* Navbar Items */
-.hm, .dropdown-title {
-    font-size: 1.3vw;
-    text-decoration: none;
-    color: inherit;
-    padding: 10px;
-    display: inline-block;
-}
-
-.hm:hover, .dropdown-title:hover {
-    color: red;
-}
-
+/* Active Page Highlight */
 .active {
-    font-weight: bold;
-    color: #ff6600;
+  font-weight: bold;
+  color: red;
+  background: none;
+  -webkit-text-fill-color: red;
+  -webkit-background-clip: unset;
 }
+

@@ -1,36 +1,66 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html , body{
-    height: 100%;
-    width: 100%;
-}
-.wide-card {
-    margin-top: 3vh;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 2vh;
-    box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.2);
-    padding: 2vh;
-    width: 30vw; /* Twice the size of SmallCard */
-    height: 26vh; /* Same height as SmallCard */
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.wide-card:hover {
-    transform: scale(1.05);
-    background-color: white;
+html, body {
+  height: 100%;
+  width: 100%;
 }
+
+.wide-card {
+  position: relative;
+  margin-top: 3vh;
+  background-image: url("../assets/apo-wmark.png");
+  border-radius: 2vh;
+  box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.2);
+  padding: 2vh;
+  width: 30vw;
+  height: 26vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: color 1.5s ease-in-out;
+}
+
+.wide-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+  background-color: #000;
+  z-index: 0;
+  transition: height 0.5s ease-in-out;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  z-index: 1;
+  transition: color 1.5s ease-in-out;
+}
+
+.wide-card:hover::before {
+  height: 100%;
+}
+
+.wide-card:hover .card-text {
+  color: white;
+  transform: scale(1.25);
+    transition: 0.6s ease-in-out;
+
+}
+
 @media (max-width: 1024px) {
-    .card-text {
-        font-size: 4.8vw; /* Adjust as needed */
-    }
-    .wide-card{
-        width: 40vw;
-    }
+  .card-text {
+    font-size: 4.8vw;
+  }
+
+  .wide-card {
+    width: 40vw;
+  }
 }
