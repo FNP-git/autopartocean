@@ -125,3 +125,9 @@
         padding-bottom: 20vh; /* Extra space at bottom */
     }
 }
+@media (max-width: 500px) {
+.contact-page {
+        min-height: auto; /* Allow full content to be shown */
+        padding-bottom: 0vh; /* Extra space at bottom */
+    }
+}
