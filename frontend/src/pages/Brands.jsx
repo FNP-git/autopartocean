@@ -9,7 +9,6 @@ import acura from '../assets/acura.webp';
 import alfaromeo from '../assets/alfaromeo.webp';
 import audi from '../assets/audi.webp';
 import bmw from '../assets/bmw.webp';
-import buick from '../assets/Buick.webp';
 import cadillac from '../assets/CADILLAC.jpg';
 import chevy from '../assets/chevy.webp';
 import chrysler from '../assets/CHRYSLER.jpg';
@@ -50,7 +49,6 @@ const Brands = () => {
     { src: alfaromeo, brandName: 'Alfaromeo' },
     { src: audi, brandName: 'Audi' },
     { src: bmw, brandName: 'BMW' },
-    { src: buick, brandName: 'Buick' },
     { src: cadillac, brandName: 'Cadillac' },
     { src: chevy, brandName: 'Chevy' },
     { src: chrysler, brandName: 'Chrysler' },
