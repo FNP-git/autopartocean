@@ -27,3 +27,14 @@ html , body{
     display: flex;
     gap: 2vw;
 }
+  @media (max-width: 500px) {
+    #foot-text{
+    font-size: 1vh;
+        margin-bottom: 0vh;
+        text-align: center;
+
+}
+#foot{
+    flex-direction: column;
+}
+}

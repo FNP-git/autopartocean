@@ -1,7 +1,7 @@
 /* CallButton.css */
 .call-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     left: 20px;
     z-index: 1000; /* Ensures the button stays on top of other content */
     text-decoration: none; /* Remove default link styling */
@@ -50,13 +50,13 @@
   /* Call Us Text beside the button */
   .call-text {
     margin-left: 1vw; /* Space between the button and text */
-    font-size: 3vh;
+    font-size: 2vh;
     font-family: Poppins; /* Use the same font as the button */
     color: black; /* Match button color */
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 2.2vw;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    padding: 1.8vw;
     text-align: center;
-    border: 2px solid black; /* Green border */
+    border: 1px solid black; /* Green border */
   }
   
