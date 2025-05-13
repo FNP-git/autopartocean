@@ -66,6 +66,22 @@ html , body{
     margin: 1vw;
     border-radius: 10px;
 }
+#serv-left{
+        align-self: flex-end;
+        height: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 50vw;
+    margin-right: 2vw;
+    border-radius: 10px;
+    margin: 1vw;
+    padding: 2vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+}
 #serpara{
     text-align: left;
     font-size: 2.8vh;
@@ -96,22 +112,7 @@ html , body{
     text-align: left;
     color: red;
 }
-#serv-left{
-        align-self: flex-end;
-        height: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 50vw;
-    margin-right: 2vw;
-    border-radius: 10px;
-    margin: 1vw;
-    padding: 2vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: right;
-}
+
 #serv-left:hover .serv-img {
     content: url('../assets/eng5.jpg'); /* Change image */
     transition: opacity 0.5s ease-in-out;
@@ -130,7 +131,10 @@ html , body{
     #serv-right {
         padding: 5vh 5vw; /* Adjust padding for better spacing */
     }
-
+    #serv-left{
+align-self:normal;
+ padding: 5vh 5vw;   
+}
     #serpara {
         max-width: 90%; /* Adjust text width for better readability */
     }
@@ -147,7 +151,7 @@ html , body{
     font-size: 4vh;
 }
 }
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
      #serv-right {
         width: 100%;
         margin-right:3vh;
