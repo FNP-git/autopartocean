@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import TestCard from '../components/TestCard';
 import './Testimonials.css';
-import testbg from '../assets/testbg.jpg';
 
 const testimonials = [
   "I recently purchased a used engine from AutoPartOcean, and I'm impressed with the performance.",
@@ -43,7 +42,6 @@ const Testimonials = () => {
   return (
     <div className="testimonials-section fade-up">
       <h1 id="testimonials-head" className="fade-up">What <span id="spn">Our Customers</span> Say</h1>
-      <img id="tstbg" src={testbg} alt="Testimonials Background" loading="lazy" className="fade-up" />
       <div className="clients-container fade-up">
         {!isSmallScreen && (
           <button className="arrow-button left" onClick={scrollLeft}>‹</button>
