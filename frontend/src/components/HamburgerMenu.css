@@ -1,60 +1,82 @@
-/* Hide the hamburger icon by default */
+/* Hamburger Icon */
 .hamburger-icon {
     font-size: 2rem;
     cursor: pointer;
     position: fixed;
     top: 15px;
     right: 20px;
-    z-index: 19; /* Higher than the menu overlay */
-    display: none; /* Hidden by default */
-    align-self: center;
-    justify-self: center;
+    z-index: 19;
+    display: none; /* default hidden, shown on small screens */
 }
 
-/* Full-screen menu overlay */
+/* Menu Overlay */
 .menu-overlay {
     position: fixed;
     top: 0;
-    right: -100%;  /* Initially hidden */
+    right: -100%;
     width: 100vw;
     height: 100vh;
-    background: white; /* Translucent white background */
+    background: white;
     transition: right 0.4s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 20; /* Lower than the close button */
+    z-index: 20;
 }
 
-/* Open state */
+/* Open State */
 .menu-overlay.open {
     right: 0;
 }
 
-/* Menu content */
+/* Menu Content */
 .menu-content {
-    text-align: center;
+    position: relative;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center everything */
-     /* Reduce space between elements */
+    justify-content: center; /* Center items vertically */
+    align-items: center;
+    box-sizing: border-box;
 }
 
-/* Logo inside the menu */
+/* Logo at top-left */
 #lgo {
-    height: 40vh;
-    margin-top: 25vh; /* Move the logo closer to the top */
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    height: 30vh;
+    width: auto;
+}
+#elm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+#diff{
+    text-align: center;
+}
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 61px;
+    right: 25px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 25;
 }
 
-/* Menu items */
+/* Menu Items */
 .menu-content ul {
     list-style: none;
-
+    padding: 0;
+    margin: 0;
 }
 
 .menu-content ul li {
-    margin: 25px 0; /* Increased vertical spacing */
+    margin: 20px 0;
 }
 
 .menu-content ul li a {
@@ -65,56 +87,21 @@
     font-family: "Poppins", sans-serif;
 }
 
-
-/* Close button */
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 35; /* Ensure it stays above everything */
-}
-
-/* Add bottom margin to push content up */
-#elm {
-    margin-bottom: 33vh;
-}
-
-/* Responsive Styles */
+/* Responsive: Show hamburger icon on smaller screens */
 @media (max-width: 1024px) {
-    /* Show hamburger icon only on small screens */
-    
-    #lgo {
-        height: 40vh;
-        margin-top: 25vh; /* Move the logo closer to the top */
-    }
-
-    /* Hide regular navbar on small screens */
-    
-}
-@media (max-width: 578px) {
-    /* Show hamburger icon only on small screens */
     .hamburger-icon {
         display: block;
         color: white;
     }
-
-    /* Hide regular navbar on small screens */
     .nav-menu {
         display: none;
     }
     .menu-content ul li a {
-        text-decoration: none;
         font-size: 1.5rem;
-        font-weight: bold;
-        color: black;
-        font-family: "Poppins", sans-serif;
     }
-} 
-/* Hide the hamburger icon when the menu is open */
+}
+
+/* Hide hamburger icon when menu is open */
 .menu-overlay.open + .hamburger-icon {
     display: none;
 }

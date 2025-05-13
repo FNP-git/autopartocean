@@ -31,8 +31,8 @@ const HamburgerMenu = () => {
             <li><NavLink to="/transmission" onClick={closeMenu}>Used Transmission</NavLink></li>
             <li><NavLink to="/engine" onClick={closeMenu}>Used Engines</NavLink></li>
             <li><NavLink to="/about" onClick={closeMenu}>About</NavLink></li>
-            <li><NavLink to="/terms-conditions" onClick={closeMenu}>Warranty Terms & Conditions</NavLink></li>
-            <li><NavLink to="/return-policy" onClick={closeMenu}>Return & Cancellation Policy</NavLink></li>
+            <li id="diff"><NavLink to="/terms-conditions" onClick={closeMenu}>Warranty Terms & Conditions</NavLink></li>
+            <li id="diff"><NavLink to="/return-policy" onClick={closeMenu}>Return & Cancellation Policy</NavLink></li>
           </ul>
         </div>
       </div>
