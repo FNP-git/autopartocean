@@ -101,3 +101,14 @@ html, body {
   -webkit-background-clip: unset;
 }
 
+@media (max-width: 1024px) {
+    /* Show hamburger icon only on small screens */
+   .hm,
+   .dropdown-title,
+   .itm{
+    font-size: 2.5vh;
+   }
+    }
+
+    /* Hide regular navbar on small screens */
+    

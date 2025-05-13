@@ -125,6 +125,7 @@ html, body {
 }
 @media (max-width: 1024px) {
     .transmission {
+        
         flex-direction: column; /* ✅ Stack sections vertically */
         height: auto; /* ✅ Allow content to expand */
         padding: 5vw; /* ✅ Balanced padding */
@@ -132,10 +133,11 @@ html, body {
     }
 
     .trans-left {
-        max-width: 100%; /* ✅ Take full width */
         text-align: center; /* ✅ Center content */
         align-items: center; /* ✅ Align properly */
         margin-left: 0; /* ✅ Remove left margin */
+        max-width: 60%;
+
     }
 
     .th1 {
@@ -160,3 +162,9 @@ html, body {
         margin-top: 5vh; /* ✅ Add spacing between sections */
     }
 }
+@media (max-width: 600px) {
+
+ .trans-left {
+        max-width: 100%;
+
+    }}

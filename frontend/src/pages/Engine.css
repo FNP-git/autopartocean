@@ -138,6 +138,7 @@ html, body {
         text-align: center; /* ✅ Center content */
         align-items: center; /* ✅ Align properly */
         margin-left: 0; /* ✅ Remove left margin */
+        max-width: 60%;
     }
 
     .eh1 {
@@ -162,3 +163,9 @@ html, body {
         margin-top: 5vh; /* ✅ Add spacing between sections */
     }
 }
+@media (max-width: 600px) {
+
+ .eng-left {
+        max-width: 100%;
+
+    }}

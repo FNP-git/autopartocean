@@ -7,7 +7,8 @@
     right: 20px;
     z-index: 19; /* Higher than the menu overlay */
     display: none; /* Hidden by default */
-    
+    align-self: center;
+    justify-self: center;
 }
 
 /* Full-screen menu overlay */
@@ -85,23 +86,20 @@
 /* Responsive Styles */
 @media (max-width: 1024px) {
     /* Show hamburger icon only on small screens */
-    .hamburger-icon {
-        display: block;
-    }
+    
     #lgo {
         height: 40vh;
         margin-top: 25vh; /* Move the logo closer to the top */
     }
 
     /* Hide regular navbar on small screens */
-    .nav-menu {
-        display: none;
-    }
+    
 }
-@media (max-width: 440px) {
+@media (max-width: 578px) {
     /* Show hamburger icon only on small screens */
     .hamburger-icon {
         display: block;
+        color: white;
     }
 
     /* Hide regular navbar on small screens */

@@ -51,7 +51,7 @@ const Testimonials = () => {
         <div className="slider-window" ref={wrapperRef}>
           <div className={`cards-wrapper ${isSmallScreen ? 'scrollable' : 'animate'}`}>
             {testimonials.map((text, i) => (
-              <div className="test-card-container fade-up" key={i}>
+              <div className="test-card-container" key={i}>
                 <TestCard text={text} />
               </div>
             ))}

@@ -41,7 +41,7 @@
 }
 
 .popup-close:hover {
-    color: red; /* Changes color on hover */
+    color: black; /* Changes color on hover */
     background: none; /* Ensures no background appears */
 }
 
