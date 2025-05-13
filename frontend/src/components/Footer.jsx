@@ -12,13 +12,13 @@ const Footer = () => {
             <h2 id='foot-text'>AutoPartOcean is an entity of Revenue Dealer LLC</h2>
             <div id="socials">
             <a href="">
-          <img src={fb} alt="facebook" />
+          <img src={fb} alt="facebook" loading='lazy' />
         </a>
         <a href="">
-          <img src={insta} alt="insta" />
+          <img src={insta} alt="insta" loading='lazy' />
         </a>
         <a href="">
-          <img src={x} alt="x" />
+          <img src={x} alt="x" loading='lazy' />
         </a>
             </div>
         </div>

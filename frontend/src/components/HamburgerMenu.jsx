@@ -24,7 +24,7 @@ const HamburgerMenu = () => {
       {/* Full-screen menu */}
       <div className={`menu-overlay ${isOpen ? "open" : ""}`} onClick={closeMenu}>
         <div className="menu-content" onClick={(e) => e.stopPropagation()}>
-          <img id="lgo" src={Logo} alt="hamburger menu icon" />
+          <img id="lgo" src={Logo} alt="hamburger menu icon" loading='lazy' />
           <button className="close-btn" onClick={closeMenu}>✖</button>
           <ul id="elm">
             <li><NavLink to="/" onClick={closeMenu}>Home</NavLink></li>

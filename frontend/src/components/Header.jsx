@@ -24,7 +24,7 @@ const Header = () => {
   className="trustpilot-button-wrapper"
 >
   <button id="trust" className="trustpilot-button">
-    Review us on <img src={trust} alt="Trustpilot" className="trustpilot-logo" />
+    Review us on <img src={trust} alt="Trustpilot" className="trustpilot-logo" loading='lazy' />
   </button>
 </a>
 
