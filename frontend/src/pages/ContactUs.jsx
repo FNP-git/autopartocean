@@ -20,16 +20,13 @@ const ContactUs = () => {
         <div className="contact-details fade-up">
           <div className="fade-up">
             <h3 className="hdngs">Opening Hours</h3>
-            <p>Mon-Fri: 9am - 6pm</p>
-            <p>Sat: Closed</p>
-            <p>Sun: Closed</p>
+            <p>Mon-Fri: 9am - 6pm(EST)</p>
+            <p>Sat,Sun: Closed</p>
           </div>
           <div className="fade-up">
             <h3 className="hdngs">Location</h3>
             <div className="lctn">
               <p><strong>Head Office:</strong> 287 Grove St, Worcester, MA 01605</p>
-              <p><strong>Sales Office:</strong> 225 Cedal Hills St, Marlborough, MA 01752</p>
-              <p><strong>Sales Office:</strong> 197M Boston Post Rd W, Marlborough, MA 01752</p>
             </div>
           </div>
           <div className="fade-up">

@@ -12,8 +12,9 @@ const allowedOrigins = [
   'https://autopartocean-eight.vercel.app',
   'https://autopartocean-fnps-projects.vercel.app',
   'http://localhost',
-  'http://localhost:3001',
+  'http://localhost:5001',
   'https://autopartocean-git-master-fnps-projects.vercel.app',
+  'http://localhost:5173',
 ];
 
 app.use(cors({

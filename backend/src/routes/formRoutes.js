@@ -69,7 +69,7 @@ router.post("/", validateForm, async (req, res) => {
   }
 
   // Destructure all fields including the hidden leadLabel
-  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin } = req.body;
+  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin,remarks, browser } = req.body;
 
   // Email options including the hidden field value
   const mailOptions = {
@@ -77,7 +77,7 @@ router.post("/", validateForm, async (req, res) => {
     to: "leads1@autopartocean.com",
     subject: "New Form Submission AutoPart Ocean",
     text: 
-      `Company": ${leadLabel}\n` +
+      `Company: ${leadLabel}\n` +
       `Full Name: ${fullName}\n` +
       `Phone: ${phone}\n` +
       `Email: ${email}\n` +
@@ -86,8 +86,9 @@ router.post("/", validateForm, async (req, res) => {
       `Make: ${make}\n` +
       `Model: ${model}\n` +
       `Part: ${part}\n` +
-      `VIN: ${vin || "Not Provided"}\n\n` +
-      `--\nAutoPart Ocean Team`,
+      `VIN: ${vin || "Not Provided"}\n` +
+      `Remarks: ${remarks || "Not Provided"}\n` +
+      `Browser: ${browser || "Not Detected"}\n` 
   };
 
   try {

@@ -14,9 +14,9 @@ const testimonials = [
   "The engine came with warranty and performed like new.",
   "Seamless experience from browsing to delivery.",
   "Highly dependable source for used transmissions.",
-  "EnginePro part restored my car's performance.",
+  "AutoPartOcean's part restored my car's performance.",
   "Definitely coming back for future car parts.",
-  "Their GearMax engine worked wonders for my SUV.",
+  "Their engine worked wonders for my SUV.",
   "Best value-for-money automotive parts provider."
 ];
 

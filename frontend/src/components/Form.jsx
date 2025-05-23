@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Form.css";
+import detectBrowser from '../utils/detectBrowser'; // adjust path as needed
 
 const Form = () => {
   const [carData, setCarData] = useState({}); // Stores { Make: [models] }
@@ -17,6 +18,8 @@ const Form = () => {
     vin: "", // No validation for this now
     email: "",
     zip: "",
+    remarks:"",
+    browser: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -30,6 +33,12 @@ const Form = () => {
       })
       .catch((err) => console.error("Error fetching car data:", err));
   }, []);
+  //browser detection
+    useEffect(() => {
+    const browser = detectBrowser();
+    setFormData((prevData) => ({ ...prevData, browser }));
+  }, []);
+
 
   // 2️⃣ Generate years from 1950 to the current year
   const currentYear = new Date().getFullYear();
@@ -80,10 +89,11 @@ const Form = () => {
 
     try {
       const response = await fetch("/api/form/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
 
       const result = await response.json();
 
@@ -111,6 +121,7 @@ const Form = () => {
           vin: "",
           email: "",
           zip: "",
+          remarks: "",
         });
       }
     } catch (error) {
@@ -123,6 +134,7 @@ const Form = () => {
       <form className="form" onSubmit={handleSubmit}>
         {/* Hidden field to send the fixed lead label */}
         <input type="hidden" name="leadLabel" value="AUTOPARTOCEAN LEAD" />
+        <input type="hidden" name="browser" value={formData.browser} /> 
 
         <div className="input-group">
           <label>Full Name *</label>
@@ -288,14 +300,14 @@ const Form = () => {
 
         <div className="row">
           <div className="input-group">
-            <label>Which Part *</label>
+            <label>Choose Your Part *</label>
             <select
               name="part"
               value={formData.part}
               onChange={handleChange}
               required
             >
-              <option value="">Choose one</option>
+              <option value="">Start Typing</option>
               <option value="Engine">Engine</option>
               <option value="Transmission">Transmission</option>
             </select>
@@ -339,6 +351,18 @@ const Form = () => {
             />
             {errors.zip && <p className="error">{errors.zip}</p>}
           </div>
+        </div>
+                <div className="row">
+        <div className="input-group">
+            <label>Remarks(Optional)</label>
+            <input
+              type="text"
+              name="remarks"
+              placeholder="Tell us about the part"
+              value={formData.remarks}
+              onChange={handleChange}
+            />
+        </div>
         </div>
 
         <button type="submit" className="submit-btn">

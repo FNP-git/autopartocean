@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   color: #100D0E;
   position: relative;
@@ -25,7 +25,21 @@
   background-color: rgba(0, 0, 0, 0.65); /* Slight black overlay */
   z-index: 0;
 }
+.home-fade {
+  background-color: black;
+  animation: fadeInHome 1s ease-in-out forwards;
+}
 
+@keyframes fadeInHome {
+  0% {
+    opacity: 0;
+    background-color: black;
+  }
+  100% {
+    opacity: 1;
+    background-color: transparent;
+  }
+}
 /* Ensure content inside stays on top of the overlay */
 #home > * {
   position: relative;
