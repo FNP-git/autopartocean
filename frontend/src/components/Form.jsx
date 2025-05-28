@@ -111,7 +111,7 @@ const Form = () => {
       } else {
         alert("Form submitted successfully!");
         setFormData({
-          leadLabel: "AUTOPARTOCEAN LEAD",
+          leadLabel: "AUTOPARTOCEAN",
           fullName: "",
           phone: "",
           year: "",
@@ -133,7 +133,7 @@ const Form = () => {
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
         {/* Hidden field to send the fixed lead label */}
-        <input type="hidden" name="leadLabel" value="AUTOPARTOCEAN LEAD" />
+        <input type="hidden" name="leadLabel" value="AUTOPARTOCEAN" />
         <input type="hidden" name="browser" value={formData.browser} /> 
 
         <div className="input-group">
