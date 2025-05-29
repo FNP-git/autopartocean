@@ -67,7 +67,7 @@ const Homepg = () => {
               <h3 id='wlcm'>WELCOME TO</h3>
               <h1 id='txt'>AUTO<span id='part'>PART</span>OCEAN</h1>
               <h5 className='para'>
-                At AutoParts Ocean, we bring your car back to life with 
+                At AutoPart Ocean, we bring your car back to life with 
                 <span className='imp'> top-quality used engines, transmissions, and small parts</span>. 
                 Every part is tested for performance, reliability, and longevity, 
                 <span className='imp'> delivered straight to your doorstep with free shipping!</span> 
