@@ -110,6 +110,14 @@ const Form = () => {
         alert(alertMessage); // Show popup with error messages
       } else {
         alert("Form submitted successfully!");
+        if (typeof uetq !== "undefined") {
+  uetq.push('event', '', {
+    'event_category': 'Lead',
+    'event_action': 'Form Submission',
+    'event_label': 'Engine Inquiry'
+  });
+  console.log("✅ Bing UET event sent");
+}
         setFormData({
           leadLabel: "AUTOPARTOCEAN",
           fullName: "",
