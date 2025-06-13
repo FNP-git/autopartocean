@@ -69,7 +69,7 @@ router.post("/", validateForm, async (req, res) => {
   }
 
   // Destructure all fields including the hidden leadLabel
-  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin,remarks, browser } = req.body;
+  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin, browser } = req.body;
 
   // Email options including the hidden field value
   const mailOptions = {
@@ -87,7 +87,7 @@ router.post("/", validateForm, async (req, res) => {
       `Model: ${model}\n` +
       `Part: ${part}\n` +
       `VIN: ${vin || "Not Provided"}\n` +
-      `Remarks: ${remarks || "Not Provided"}\n` +
+      // `Remarks: ${remarks || "Not Provided"}\n` +
       `Browser: ${browser || "Not Detected"}\n` 
   };
 

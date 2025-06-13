@@ -18,7 +18,7 @@ const Form = () => {
     vin: "", // No validation for this now
     email: "",
     zip: "",
-    remarks:"",
+    // remarks:"",
     browser: "",
   });
 
@@ -129,7 +129,7 @@ const Form = () => {
           vin: "",
           email: "",
           zip: "",
-          remarks: "",
+          // remarks: "",
         });
       }
     } catch (error) {
@@ -360,7 +360,7 @@ const Form = () => {
             {errors.zip && <p className="error">{errors.zip}</p>}
           </div>
         </div>
-                <div className="row">
+                {/* <div className="row">
         <div className="input-group">
             <label>Remarks(Optional)</label>
             <input
@@ -371,7 +371,7 @@ const Form = () => {
               onChange={handleChange}
             />
         </div>
-        </div>
+        </div> */}
 
         <button type="submit" className="submit-btn">
   <span className="submit-text">Submit</span>
