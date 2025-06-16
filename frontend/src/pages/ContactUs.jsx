@@ -26,7 +26,8 @@ const ContactUs = () => {
           <div className="fade-up">
             <h3 className="hdngs">Location</h3>
             <div className="lctn">
-              <p><strong>Head Office:</strong> 287 Grove St, Worcester, MA 01605</p>
+              <p id='addrs'><strong>Head Office:</strong> 287 Grove St, Worcester, MA 01605</p>
+              <p id='addrs'><strong>Sales Office:</strong> 225 Cedar Hill StMarlborough, MA 01752, USA</p>
             </div>
           </div>
           <div className="fade-up">
