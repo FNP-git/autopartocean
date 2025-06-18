@@ -14,9 +14,10 @@ const Header = () => {
         <div id="header">
 <NavLink to="/">
   <img id='logo' src={apo} alt="Autoparts Ocean Logo" loading='lazy' />
-</NavLink>        <a href="https://www.bbb.org/us/ma/marlborough/profile/used-auto-parts/auto-part-ocean-0021-561291" target="_blank" rel="noopener noreferrer">
+</NavLink>        
+{/* <a href="https://www.bbb.org/us/ma/marlborough/profile/used-auto-parts/auto-part-ocean-0021-561291" target="_blank" rel="noopener noreferrer">
           <img id='bbb' src={bbb_logo} alt="bbb accredited" loading='lazy' />
-        </a>
+        </a> */}
         <a 
   href="https://www.trustpilot.com/review/autopartocean.com" 
   target="_blank" 

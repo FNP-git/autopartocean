@@ -37,27 +37,27 @@ const Homepg = () => {
               <div className="item2">WORLDWIDE FREE SHIPPING</div>
               <div className="item">24/7 SUPPORT</div>
               <div className="item2">EXTENDED WARRANTY</div>
-              <div className="item">BBB ACCREDITED</div>
+              {/* <div className="item">BBB ACCREDITED</div> */}
               <div className="item2">WORLDWIDE FREE SHIPPING</div>
               <div className="item">24/7 SUPPORT</div>
               <div className="item2">A+ RATING</div>
               <div className="item">EXTENDED WARRANTY</div>
-              <div className="item2">BBB ACCREDITED</div>
+              {/* <div className="item2">BBB ACCREDITED</div> */}
               <div className="item">A+ RATING</div>
               <div className="item2">WORLDWIDE FREE SHIPPING</div>
               <div className="item">24/7 SUPPORT</div>
               <div className="item2">EXTENDED WARRANTY</div>
-              <div className="item">BBB ACCREDITED</div>
+              {/* <div className="item">BBB ACCREDITED</div> */}
               <div className="item2">WORLDWIDE FREE SHIPPING</div>
               <div className="item">24/7 SUPPORT</div>
               <div className="item2">A+ RATING</div>
               <div className="item">EXTENDED WARRANTY</div>
-              <div className="item2">BBB ACCREDITED</div>
+              {/* <div className="item2">BBB ACCREDITED</div> */}
               <div className="item2">WORLDWIDE FREE SHIPPING</div>
               <div className="item">24/7 SUPPORT</div>
               <div className="item2">A+ RATING</div>
               <div className="item">EXTENDED WARRANTY</div>
-              <div className="item2">BBB ACCREDITED</div>
+              {/* <div className="item2">BBB ACCREDITED</div> */}
             </div>
           </div>
 
