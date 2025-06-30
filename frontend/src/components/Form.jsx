@@ -23,8 +23,32 @@ const Form = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [trackingData, setTrackingData] = useState({});
 
-  // 1️⃣ Fetch make/model data from public/carData.json
+  // Capture ad tracking parameters
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const tracking = {
+      utm_source: urlParams.get('utm_source') || 'direct',
+      utm_medium: urlParams.get('utm_medium') || 'none',
+      utm_campaign: urlParams.get('utm_campaign') || 'none',
+      utm_term: urlParams.get('utm_term') || '',
+      utm_content: urlParams.get('utm_content') || '',
+      utm_id: urlParams.get('utm_id') || '',
+      gclid: urlParams.get('gclid') || '',
+      msclkid: urlParams.get('msclkid') || '',
+      fbclid: urlParams.get('fbclid') || '',
+      referrer: document.referrer || 'direct',
+      landing_page: window.location.href,
+      timestamp: new Date().toISOString()
+    };
+    
+    setTrackingData(tracking);
+    localStorage.setItem('adTrackingData', JSON.stringify(tracking));
+  }, []);
+
+  // Fetch make/model data from public/carData.json
   useEffect(() => {
     fetch("/carData.json")
       .then((res) => res.json())
@@ -33,21 +57,21 @@ const Form = () => {
       })
       .catch((err) => console.error("Error fetching car data:", err));
   }, []);
-  //browser detection
-    useEffect(() => {
+
+  // Browser detection
+  useEffect(() => {
     const browser = detectBrowser();
     setFormData((prevData) => ({ ...prevData, browser }));
   }, []);
 
-
-  // 2️⃣ Generate years from 1950 to the current year
+  // Generate years from 1950 to the current year
   const currentYear = new Date().getFullYear();
   const years = [];
   for (let y = 1950; y <= currentYear; y++) {
     years.push(y);
   }
 
-  // 3️⃣ Handle input changes (same as before, but we skip for Make/Model dropdown logic)
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -59,7 +83,7 @@ const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // 4️⃣ Filter logic for Make & Model
+  // Filter logic for Make & Model
   const allMakes = Object.keys(carData).sort();
   const filteredMakes = allMakes.filter((m) =>
     m.toLowerCase().includes(formData.make.toLowerCase())
@@ -71,7 +95,7 @@ const Form = () => {
     mod.toLowerCase().includes(formData.model.toLowerCase())
   );
 
-  // 5️⃣ Handle selection from dropdown
+  // Handle selection from dropdown
   const handleSelectMake = (selectedMake) => {
     setFormData({ ...formData, make: selectedMake, model: "" });
     setShowMakeDropdown(false);
@@ -82,18 +106,32 @@ const Form = () => {
     setShowModelDropdown(false);
   };
 
-  // 6️⃣ Submission logic (unchanged)
+  // Generate unique lead ID
+  const generateLeadId = () => {
+    return 'LEAD_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  };
+
+  // Submission logic with tracking data
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors({}); // Clear previous errors
+    setErrors({});
 
     try {
-      const response = await fetch("/api/form/", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData),
-});
+      const storedTracking = localStorage.getItem('adTrackingData');
+      const currentTracking = storedTracking ? JSON.parse(storedTracking) : trackingData;
+      
+      const submissionData = {
+        ...formData,
+        tracking: currentTracking,
+        leadId: generateLeadId(),
+        submissionTime: new Date().toISOString()
+      };
 
+      const response = await fetch("/api/form/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(submissionData),
+      });
 
       const result = await response.json();
 
@@ -107,17 +145,18 @@ const Form = () => {
         });
 
         setErrors(errorMessages);
-        alert(alertMessage); // Show popup with error messages
+        alert(alertMessage);
       } else {
         alert("Form submitted successfully!");
+        
         if (typeof uetq !== "undefined") {
-  uetq.push('event', '', {
-    'event_category': 'Lead',
-    'event_action': 'Form Submission',
-    'event_label': 'Engine Inquiry'
-  });
-  console.log("✅ Bing UET event sent");
-}
+          uetq.push('event', '', {
+            'event_category': 'Lead',
+            'event_action': 'Form Submission',
+            'event_label': 'Engine Inquiry'
+          });
+        }
+
         setFormData({
           leadLabel: "AUTOPARTOCEAN",
           fullName: "",
@@ -129,7 +168,7 @@ const Form = () => {
           vin: "",
           email: "",
           zip: "",
-          // remarks: "",
+          browser: formData.browser,
         });
       }
     } catch (error) {
@@ -142,7 +181,7 @@ const Form = () => {
       <form className="form" onSubmit={handleSubmit}>
         {/* Hidden field to send the fixed lead label */}
         <input type="hidden" name="leadLabel" value="AUTOPARTOCEAN" />
-        <input type="hidden" name="browser" value={formData.browser} /> 
+        <input type="hidden" name="browser" value={formData.browser} />
 
         <div className="input-group">
           <label>Full Name *</label>
@@ -200,11 +239,10 @@ const Form = () => {
                 value={formData.make}
                 onChange={(e) => {
                   handleChange(e);
-                  setShowMakeDropdown(true); // Show dropdown when typing
+                  setShowMakeDropdown(true);
                 }}
                 onFocus={() => setShowMakeDropdown(true)}
                 onBlur={() => {
-                  // Delay hiding to allow click selection
                   setTimeout(() => setShowMakeDropdown(false), 200);
                 }}
                 required
@@ -245,7 +283,7 @@ const Form = () => {
             </div>
           </div>
 
-          {/* Model: Typeable Dropdown (only if a make is selected) */}
+          {/* Model: Typeable Dropdown */}
           <div className="input-group">
             <label>Model *</label>
             <div style={{ position: "relative" }}>
@@ -266,7 +304,7 @@ const Form = () => {
                 onBlur={() => {
                   setTimeout(() => setShowModelDropdown(false), 200);
                 }}
-                disabled={!formData.make} // Only enabled if Make is selected
+                disabled={!formData.make}
                 required
               />
               {/* Model Dropdown */}
@@ -360,22 +398,10 @@ const Form = () => {
             {errors.zip && <p className="error">{errors.zip}</p>}
           </div>
         </div>
-                {/* <div className="row">
-        <div className="input-group">
-            <label>Remarks(Optional)</label>
-            <input
-              type="text"
-              name="remarks"
-              placeholder="Tell us about the part"
-              value={formData.remarks}
-              onChange={handleChange}
-            />
-        </div>
-        </div> */}
 
         <button type="submit" className="submit-btn">
-  <span className="submit-text">Submit</span>
-</button>
+          <span className="submit-text">Submit</span>
+        </button>
 
       </form>
     </div>

@@ -6,13 +6,24 @@ require("dotenv").config();
 const router = express.Router();
 
 // Create transporter for sending emails
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransporter({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
 });
+
+// Helper function to determine ad source
+function getAdSource(tracking) {
+  if (tracking.gclid) return 'Google Ads';
+  if (tracking.msclkid) return 'Bing Ads';
+  if (tracking.fbclid) return 'Facebook Ads';
+  if (tracking.utm_source === 'google') return 'Google Ads';
+  if (tracking.utm_source === 'bing') return 'Bing Ads';
+  if (tracking.utm_source) return tracking.utm_source;
+  return 'Direct Traffic';
+}
 
 // Validation middleware (unchanged)
 const validateForm = [
@@ -68,27 +79,54 @@ router.post("/", validateForm, async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  // Destructure all fields including the hidden leadLabel
-  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin, browser } = req.body;
+  // Destructure all fields including tracking data
+  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin, browser, tracking, leadId, submissionTime } = req.body;
 
-  // Email options including the hidden field value
+  // Create enhanced email content with tracking
+  const emailContent = `
+AutoPart Ocean Support - New Lead Submission
+
+Company: ${leadLabel}
+Full Name: ${fullName}
+Phone: ${phone}
+Email: ${email}
+Zip: ${zip}
+Year: ${year}
+Make: ${make}
+Model: ${model}
+Part: ${part}
+VIN: ${vin || "Not Provided"}
+Browser: ${browser || "Not Detected"}
+
+=== AD TRACKING INFORMATION ===
+Lead ID: ${leadId || 'Not Generated'}
+Ad Source: ${getAdSource(tracking || {})}
+Campaign: ${tracking?.utm_campaign || 'Not specified'}
+Medium: ${tracking?.utm_medium || 'Not specified'}
+Source: ${tracking?.utm_source || 'direct'}
+Search Term: ${tracking?.utm_term || 'Not captured'}
+Ad Content: ${tracking?.utm_content || 'Not specified'}
+Campaign ID: ${tracking?.utm_id || 'Not specified'}
+Google Click ID: ${tracking?.gclid || 'Not captured'}
+Bing Click ID: ${tracking?.msclkid || 'Not captured'}
+Facebook Click ID: ${tracking?.fbclid || 'Not captured'}
+Referrer: ${tracking?.referrer || 'Direct visit'}
+Landing Page: ${tracking?.landing_page || 'Not captured'}
+Submission Time: ${submissionTime || new Date().toISOString()}
+=== END TRACKING INFO ===
+  `;
+
+  // Enhanced email subject with campaign info
+  const subjectLine = tracking?.utm_campaign && tracking.utm_campaign !== 'none' 
+    ? `New Lead: ${fullName} - ${getAdSource(tracking)} - ${tracking.utm_campaign}`
+    : `New Lead: ${fullName} - ${getAdSource(tracking || {})}`;
+
+  // Email options including tracking information
   const mailOptions = {
     from: `"AutoPart Ocean Support" <devops@fnpglobal.com>`,
     to: "leads1@autopartocean.com",
-    subject: "New Form Submission AutoPart Ocean",
-    text: 
-      `Company: ${leadLabel}\n` +
-      `Full Name: ${fullName}\n` +
-      `Phone: ${phone}\n` +
-      `Email: ${email}\n` +
-      `Zip: ${zip}\n` +
-      `Year: ${year}\n` +
-      `Make: ${make}\n` +
-      `Model: ${model}\n` +
-      `Part: ${part}\n` +
-      `VIN: ${vin || "Not Provided"}\n` +
-      // `Remarks: ${remarks || "Not Provided"}\n` +
-      `Browser: ${browser || "Not Detected"}\n` 
+    subject: subjectLine,
+    text: emailContent
   };
 
   try {
