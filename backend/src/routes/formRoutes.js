@@ -6,7 +6,7 @@ require("dotenv").config();
 const router = express.Router();
 
 // Create transporter for sending emails
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
