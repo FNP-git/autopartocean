@@ -171,7 +171,7 @@ const Form = () => {
     setErrors({});
 
     try {
-      const storedTracking = localStorage.getItem('adTrackingData');
+      const storedTracking = sessionStorage.getItem('adTrackingData') || localStorage.getItem('adTrackingData'); // ✅ Checks both
       const currentTracking = storedTracking ? JSON.parse(storedTracking) : trackingData;
       
       const submissionData = {
