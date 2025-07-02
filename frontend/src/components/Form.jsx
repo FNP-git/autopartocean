@@ -171,8 +171,17 @@ const Form = () => {
     setErrors({});
 
     try {
-      const storedTracking = sessionStorage.getItem('adTrackingData') || localStorage.getItem('adTrackingData'); // ✅ Checks both
+      const storedTracking = localStorage.getItem('adTrackingData');
+      const sessionTracking = sessionStorage.getItem('adTrackingData');
       const currentTracking = storedTracking ? JSON.parse(storedTracking) : trackingData;
+      
+      // Debug info (remove after testing)
+      console.log('=== TRACKING DEBUG ===');
+      console.log('Current URL:', window.location.href);
+      console.log('SessionStorage:', sessionTracking);
+      console.log('LocalStorage:', storedTracking);
+      console.log('Current Tracking:', currentTracking);
+      console.log('=== END DEBUG ===');
       
       const submissionData = {
         ...formData,
@@ -180,6 +189,12 @@ const Form = () => {
         leadId: generateLeadId(),
         submissionTime: new Date().toISOString()
       };
+
+      // Debug code - remove after testing
+      console.log('Debug - SessionStorage:', sessionStorage.getItem('adTrackingData'));
+      console.log('Debug - LocalStorage:', localStorage.getItem('adTrackingData'));
+      console.log('Debug - Current Tracking:', currentTracking);
+      console.log('Debug - Submission Data:', submissionData);
 
       const response = await fetch("/api/form/", {
         method: "POST",
