@@ -29,7 +29,7 @@ const Form = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     
-    const tracking = {
+    let tracking = {
       utm_source: urlParams.get('utm_source') || 'direct',
       utm_medium: urlParams.get('utm_medium') || 'none',
       utm_campaign: urlParams.get('utm_campaign') || 'none',
@@ -43,6 +43,29 @@ const Form = () => {
       landing_page: window.location.href,
       timestamp: new Date().toISOString()
     };
+
+    // If no UTM on current page, check referrer
+    if (!urlParams.get('utm_source') && document.referrer) {
+      try {
+        const referrerUrl = new URL(document.referrer);
+        const referrerParams = new URLSearchParams(referrerUrl.search);
+        
+        // Use referrer UTM data if current page has none
+        if (referrerParams.get('utm_source')) {
+          tracking.utm_source = referrerParams.get('utm_source') || 'direct';
+          tracking.utm_medium = referrerParams.get('utm_medium') || 'none';
+          tracking.utm_campaign = referrerParams.get('utm_campaign') || 'none';
+          tracking.utm_term = referrerParams.get('utm_term') || '';
+          tracking.utm_content = referrerParams.get('utm_content') || '';
+          tracking.utm_id = referrerParams.get('utm_id') || '';
+          tracking.gclid = referrerParams.get('gclid') || '';
+          tracking.msclkid = referrerParams.get('msclkid') || '';
+          tracking.fbclid = referrerParams.get('fbclid') || '';
+        }
+      } catch (e) {
+        console.log('Could not parse referrer URL');
+      }
+    }
     
     setTrackingData(tracking);
     localStorage.setItem('adTrackingData', JSON.stringify(tracking));
