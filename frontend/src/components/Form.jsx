@@ -27,14 +27,21 @@ const Form = () => {
 
   // Capture ad tracking parameters
   useEffect(() => {
+    console.log('=== TRACKING USEEFFECT STARTED ===');
+    console.log('Current URL:', window.location.href);
+    
     const urlParams = new URLSearchParams(window.location.search);
+    console.log('URL Search Params:', window.location.search);
+    console.log('UTM Source from URL:', urlParams.get('utm_source'));
     
     // Check if we already have tracking data stored
     const existingTracking = sessionStorage.getItem('adTrackingData');
+    console.log('Existing SessionStorage:', existingTracking);
     let tracking;
 
     // If current page has UTM parameters, use them (fresh ad click)
     if (urlParams.get('utm_source')) {
+      console.log('UTM parameters found on current page');
       tracking = {
         utm_source: urlParams.get('utm_source'),
         utm_medium: urlParams.get('utm_medium') || 'none',
@@ -51,15 +58,18 @@ const Form = () => {
       };
       // Store new tracking data
       sessionStorage.setItem('adTrackingData', JSON.stringify(tracking));
+      console.log('Stored new tracking data in sessionStorage:', tracking);
     } 
     // If no UTM on current page but we have stored data, use stored data
     else if (existingTracking) {
+      console.log('Using existing tracking data from sessionStorage');
       tracking = JSON.parse(existingTracking);
       // Update current page info but keep original tracking
       tracking.current_page = window.location.href;
     }
     // If no UTM and no stored data, check referrer
     else {
+      console.log('No UTM parameters and no stored data, checking referrer');
       tracking = {
         utm_source: 'direct',
         utm_medium: 'none',
@@ -77,11 +87,13 @@ const Form = () => {
 
       // Check referrer as fallback
       if (document.referrer) {
+        console.log('Checking referrer:', document.referrer);
         try {
           const referrerUrl = new URL(document.referrer);
           const referrerParams = new URLSearchParams(referrerUrl.search);
           
           if (referrerParams.get('utm_source')) {
+            console.log('Found UTM in referrer');
             tracking.utm_source = referrerParams.get('utm_source');
             tracking.utm_medium = referrerParams.get('utm_medium') || 'none';
             tracking.utm_campaign = referrerParams.get('utm_campaign') || 'none';
@@ -91,15 +103,19 @@ const Form = () => {
             tracking.gclid = referrerParams.get('gclid') || '';
             tracking.msclkid = referrerParams.get('msclkid') || '';
             tracking.fbclid = referrerParams.get('fbclid') || '';
+          } else {
+            console.log('No UTM in referrer');
           }
         } catch (e) {
-          console.log('Could not parse referrer URL');
+          console.log('Could not parse referrer URL:', e);
         }
       }
     }
     
+    console.log('Final tracking data:', tracking);
     setTrackingData(tracking);
     localStorage.setItem('adTrackingData', JSON.stringify(tracking));
+    console.log('=== TRACKING USEEFFECT FINISHED ===');
   }, []);
 
   // Fetch make/model data from public/carData.json
