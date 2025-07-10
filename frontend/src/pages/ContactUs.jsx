@@ -27,19 +27,18 @@ const ContactUs = () => {
             <h3 className="hdngs">Location</h3>
             <div className="lctn">
               <p id='addrs'><strong>Head Office:</strong> 287 Grove St, Worcester, MA 01605</p>
-              <p id='addrs'><strong>Sales Office:</strong> 225 Cedar Hill StMarlborough, MA 01752, USA</p>
             </div>
           </div>
           <div className="fade-up">
             <h3 className="hdngs">Info</h3>
             <p>Phone: <a href="tel:+18888195651">+1-888-819-5651</a></p>
             <p>Email: <a href="mailto:info@autopartocean.com">info@autopartocean.com</a></p>
-            <div>
+            {/* <div>
               <h3 className="hdngs"><br />Managed By</h3>
               <a href="https://www.fnpglobal.com/" target="blank">
                 <p><strong>FNP Global</strong></p>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
