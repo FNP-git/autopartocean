@@ -15,10 +15,7 @@ const Form = () => {
     make: "",
     model: "",
     part: "",
-    vin: "", // No validation for this now
     email: "",
-    zip: "",
-    // remarks:"",
     browser: "",
   });
 
@@ -149,8 +146,7 @@ const Form = () => {
 
     // Restrict invalid characters dynamically
     if (name === "fullName" && /[^a-zA-Z\s]/.test(value)) return; // Only letters & spaces
-    if (name === "phone" && /[^0-9]/.test(value)) return;         // Only numbers
-    if (name === "zip" && /[^0-9]/.test(value)) return;           // Only numbers
+    if (name === "phone" && /[^0-9]/.test(value)) return;          // Only numbers
 
     setFormData({ ...formData, [name]: value });
   };
@@ -252,9 +248,7 @@ const Form = () => {
           make: "",
           model: "",
           part: "",
-          vin: "",
           email: "",
-          zip: "",
           browser: formData.browser,
         });
       }
@@ -270,32 +264,6 @@ const Form = () => {
         <input type="hidden" name="leadLabel" value="AUTOPARTOCEAN" />
         <input type="hidden" name="browser" value={formData.browser} />
 
-        <div className="input-group">
-          <label>Full Name *</label>
-          <input
-            type="text"
-            name="fullName"
-            placeholder="Enter your full name"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
-          {errors.fullName && <p className="error">{errors.fullName}</p>}
-        </div>
-
-        <div className="input-group">
-          <label>Phone *</label>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Enter 10-digit number"
-            value={formData.phone}
-            onChange={handleChange}
-            maxLength="10"
-            required
-          />
-          {errors.phone && <p className="error">{errors.phone}</p>}
-        </div>
 
         <div className="row">
           <div className="input-group">
@@ -430,7 +398,6 @@ const Form = () => {
             </div>
           </div>
         </div>
-
         <div className="row">
           <div className="input-group">
             <label>Choose Your Part *</label>
@@ -445,7 +412,7 @@ const Form = () => {
               <option value="Transmission">Transmission</option>
             </select>
           </div>
-          <div className="input-group">
+          {/* <div className="input-group">
             <label>VIN Number (optional)</label>
             <input
               type="text"
@@ -455,8 +422,39 @@ const Form = () => {
               onChange={handleChange}
               maxLength="17"
             />
-          </div>
+          </div> */}
         </div>
+
+        <div className="input-group">
+          <label>Full Name *</label>
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Enter your full name"
+            value={formData.fullName}
+            onChange={handleChange}
+            required
+          />
+          {errors.fullName && <p className="error">{errors.fullName}</p>}
+        </div>
+
+        <div className="input-group">
+          <label>Phone *</label>
+          <input
+            type="text"
+            name="phone"
+            placeholder="Enter 10-digit number"
+            value={formData.phone}
+            onChange={handleChange}
+            maxLength="10"
+            required
+          />
+          {errors.phone && <p className="error">{errors.phone}</p>}
+        </div>
+
+        
+
+        
 
         <div className="row">
           <div className="input-group">
@@ -471,7 +469,7 @@ const Form = () => {
             />
             {errors.email && <p className="error">{errors.email}</p>}
           </div>
-          <div className="input-group">
+          {/* <div className="input-group">
             <label>Zip Code *</label>
             <input
               type="text"
@@ -483,7 +481,7 @@ const Form = () => {
               required
             />
             {errors.zip && <p className="error">{errors.zip}</p>}
-          </div>
+          </div> */}
         </div>
 
         <button type="submit" className="submit-btn">

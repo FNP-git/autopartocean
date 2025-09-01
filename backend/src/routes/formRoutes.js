@@ -6,7 +6,7 @@ require("dotenv").config();
 const router = express.Router();
 
 // Create transporter for sending emails
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransporter({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
@@ -25,7 +25,7 @@ function getAdSource(tracking) {
   return 'Direct Traffic';
 }
 
-// Validation middleware (unchanged)
+// Updated validation middleware - only for fields that exist in the form
 const validateForm = [
   body("fullName")
     .trim()
@@ -48,6 +48,33 @@ const validateForm = [
     .isEmail()
     .withMessage("Invalid email format"),
 
+  body("year")
+    .notEmpty()
+    .withMessage("Year is required")
+    .isInt({ min: 1950, max: new Date().getFullYear() })
+    .withMessage(`Year must be between 1950-${new Date().getFullYear()}`),
+
+  body("make")
+    .trim()
+    .notEmpty()
+    .withMessage("Make is required")
+    .isLength({ min: 2 })
+    .withMessage("Make must be at least 2 characters long"),
+
+  body("model")
+    .trim()
+    .notEmpty()
+    .withMessage("Model is required")
+    .isLength({ min: 1 })
+    .withMessage("Model is required"),
+
+  body("part")
+    .trim()
+    .notEmpty()
+    .withMessage("Part selection is required"),
+
+  // Commented out validations for removed fields
+  /*
   body("zip")
     .trim()
     .isLength({ min: 5, max: 5 })
@@ -55,17 +82,12 @@ const validateForm = [
     .matches(/^\d+$/)
     .withMessage("Zip Code must contain only numbers"),
   
-  body("vin") // Previously unvalidated
-    .optional({ checkFalsy: true }) // Validate only if present
+  body("vin")
+    .optional({ checkFalsy: true })
     .trim()
     .isLength({ min: 17, max: 17 })
     .withMessage("VIN must be exactly 17 characters"),
-    
-  body("year") // Previously unvalidated
-    .optional({ checkFalsy: true })
-    .isInt({ min: 1900, max: new Date().getFullYear() })
-    .withMessage(`Year must be between 1900-${new Date().getFullYear()}`)
-
+  */
 ];
 
 router.get("/", (req, res) => {
@@ -76,13 +98,27 @@ router.get("/", (req, res) => {
 router.post("/", validateForm, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.error("Validation failed:", errors.array());
     return res.status(400).json({ errors: errors.array() });
   }
 
-  // Destructure all fields including tracking data
-  const { leadLabel, fullName, phone, email, zip, year, make, model, part, vin, browser, tracking, leadId, submissionTime } = req.body;
+  // Destructure only the fields that exist in the simplified form
+  const { 
+    leadLabel, 
+    fullName, 
+    phone, 
+    email, 
+    year, 
+    make, 
+    model, 
+    part, 
+    browser, 
+    tracking, 
+    leadId, 
+    submissionTime 
+  } = req.body;
 
-  // Create enhanced email content with tracking
+  // Create enhanced email content with tracking (updated for simplified form)
   const emailContent = `
 AutoPart Ocean Support - New Lead Submission
 
@@ -90,12 +126,10 @@ Company: ${leadLabel}
 Full Name: ${fullName}
 Phone: ${phone}
 Email: ${email}
-Zip: ${zip}
 Year: ${year}
 Make: ${make}
 Model: ${model}
 Part: ${part}
-VIN: ${vin || "Not Provided"}
 Browser: ${browser || "Not Detected"}
 
 === AD TRACKING INFORMATION ===
@@ -130,10 +164,15 @@ Submission Time: ${submissionTime || new Date().toISOString()}
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.response);
     res.json({ message: "Form submitted and email sent successfully!" });
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Error sending email:", {
+      message: error.message,
+      response: error.response,
+      code: error.code,
+    });
     res.status(500).json({ error: "Failed to send email" });
   }
 });
