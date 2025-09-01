@@ -17,10 +17,10 @@ const Services = () => {
   {/* Left Section */}
   <div id="serv-left" className="fade-up">
     <div id="scam">
-      <h1 id="scm-hd">BEWARE OF <span id="scm" >SCAMMERS</span> IN THE AUTO PARTS MARKET</h1>
-      <h3 id="prtct">Protect Yourself Before You Purchase. Learn the Red Flags to watch Out For & Buy With Confidence</h3>
-      <h4 id="prtct">Scammers target buyers with tempting prices and false guarantees- often vanishing after collecting payment. Learn how to shop smart and how <span id="scn">AutoPartOcean</span> ensures peace of mind</h4>
-    </div>
+  <h1 id="scm-hd">AMERICA'S TRUSTED <span id="scm">AUTO PARTS</span> SUPPLIER</h1>
+  <h3 id="prtct">Quality-Tested Engines & Transmissions with Nationwide Delivery. Experience the Difference of Professional Service</h3>
+  <h4 id="prtct">We connect you with 1,000+ inventory yards nationwide, offering quality-tested used engines and transmissions with warranty protection. Every part is inspected, tested, and delivered to your doorstep with <span id="scn">AutoPartOcean's</span> commitment to excellence</h4>
+</div>
   </div>
 
   {/* Right Section */}
