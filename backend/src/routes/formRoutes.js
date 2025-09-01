@@ -5,8 +5,10 @@ require("dotenv").config();
 
 const router = express.Router();
 
-// Create transporter for sending emails
-const transporter = nodemailer.createTransporter({
+console.log('✅ Form routes file loaded successfully');
+
+// Create transporter for sending emails - FIXED: removed extra 'r'
+const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
