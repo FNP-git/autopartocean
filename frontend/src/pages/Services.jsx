@@ -6,7 +6,6 @@ import L1 from '../assets/engine.svg'
 import L2 from '../assets/transmission.svg'
 import L3 from '../assets/installation.svg'
 
-import eng1 from '../assets/eng1.jpg'
 
 const Services = () => {
   useScrollAnimate(['.fade-up', '.slide-left', '.slide-right', '.zoom-in']);
