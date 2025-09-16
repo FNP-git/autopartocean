@@ -150,4 +150,80 @@
 }
 
 
+@media (max-width: 1024px) {
+  .apo-title {
+    font-size: 8vh;
+    margin-bottom: -2vh;
+  }
 
+  .apo-sub {
+    font-size: 2.5vh;
+    margin-bottom: 1.5vh;
+  }
+
+  .apo-progress-bar {
+    width: 25vh;
+    height: 5px;
+  }
+
+  .apo-image-slider {
+    width: 4vh;
+    height: 3.5vh;
+  }
+
+  .apo-image-track img {
+    height: 4vh;
+    width: 5vh;
+  }
+
+  .apo-pattern {
+    font-size: 10vh;
+    grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
+    grid-auto-rows: 18vh;
+  }
+}
+
+/* ============================= */
+/* 🔹 Mobile (≤600px)            */
+/* ============================= */
+@media (max-width: 650px) {
+  .apo-title {
+    font-size: 3rem;
+    margin-bottom: -1.5vh;
+  }
+
+  .apo-sub {
+    font-size: 2vh;
+    line-height: 1.2;
+  }
+
+  .apo-progress-bar {
+    width: 20vh;
+    height: 4px;
+  }
+
+  .apo-image-slider {
+    width: 3.5vh;
+    height: 3vh;
+  }
+
+  .apo-image-track img {
+    height: 3.5vh;
+    width: 4.5vh;
+  }
+
+  .apo-pattern {
+    font-size: 8vh;
+    grid-template-columns: repeat(auto-fit, minmax(22vw, 1fr));
+    grid-auto-rows: 20vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .apo-title {
+    font-size: 2rem;
+    margin-bottom: -1.5vh;
+  }
+
+  
+}

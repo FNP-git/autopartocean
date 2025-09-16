@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import './Homepg.css';
 import Form from '../components/Form';
 import Services from '../pages/Services';
 import Provide from '../pages/Provide';
 import Testimonials from '../pages/Testimonials';
 import ContactUs from '../pages/ContactUs';
-import Popup from '../components/Popup';
+// import Popup from '../components/Popup';
 import Brands from './Brands';
 import CallButton from '../components/CallButton';
 import dmca from '../assets/dmca.png';
@@ -13,24 +12,23 @@ import useScrollAnimate from '../hooks/useScrollAnimate';
 import MatrixLoader from '../components/MatrixLoader';
 
 const Homepg = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   useScrollAnimate(['.fade-up', '.slide-left', '.slide-right', '.zoom-in']);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5000); // Show loader for 2.5 seconds
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 5000); // Show loader for 2.5 seconds
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
-      {isLoading && <MatrixLoader />}
-      {!isLoading && (
+      {(
         <>
           <div className="home-fade">
 
-          <Popup />
+          {/* <Popup /> */}
           {/* Slider */}
           <div className="slider">
             <div className="slider-track">
