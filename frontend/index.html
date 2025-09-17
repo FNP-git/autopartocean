@@ -19,17 +19,20 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- 🚀 Lazy-load Google Ads (AW-17046619258) -->
+    <!-- 🚀 Lazy-load Google Analytics (G-96MTEX2MEN) + Google Ads (AW-17046619258) -->
     <script>
       setTimeout(() => {
         const gtagScript = document.createElement('script');
-        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17046619258';
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-96MTEX2MEN';
         gtagScript.async = true;
         document.head.appendChild(gtagScript);
 
         window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
         gtag('js', new Date());
+
+        // ✅ Google Analytics 4
+        gtag('config', 'G-96MTEX2MEN');
 
         // ✅ Google Ads
         gtag('config', 'AW-17046619258');
