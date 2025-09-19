@@ -20,14 +20,16 @@ html , body{
     transition: all linear 0.05s;
   }
 /* 🔥 Force Tawk.to widget to bottom-right */
+/* Force the Tawk wrapper to bottom-right */
 div[id^="tawk_"] {
   position: fixed !important;
-  bottom: 0 !important;   /* ✅ Flush with bottom */
+  bottom: 0 !important;
   right: 0 !important;
   left: auto !important;
   z-index: 2147483647 !important;
 }
 
+/* Safety: iframe itself also pinned */
 iframe[src*="tawk.to"] {
   position: fixed !important;
   bottom: 0 !important;

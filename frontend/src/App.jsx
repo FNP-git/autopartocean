@@ -12,6 +12,7 @@ import Rtrn from './pages/Rtrn';
 import ContactUs from './pages/ContactUs';
 import CustomCursor from './components/CustomCursor'; // ✅ Import
 import '../src/styles/scrollAnimations.css';
+import FixTawkPosition from "./hooks/FixTawkPosition";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
 
   return (
     <>
+    <FixTawkPosition />
       {!isMobile && <CustomCursor />} {/* ✅ Cursor shown only on desktop */}
       <Header />
       <Navbar />
