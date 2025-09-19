@@ -19,3 +19,18 @@ html , body{
     pointer-events: none;
     transition: all linear 0.05s;
   }
+/* 🔥 Force Tawk.to widget to bottom-right */
+div[id^="tawk_"] {
+  position: fixed !important;
+  bottom: 0 !important;   /* ✅ Flush with bottom */
+  right: 0 !important;
+  left: auto !important;
+  z-index: 2147483647 !important;
+}
+
+iframe[src*="tawk.to"] {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 2147483647 !important;
+}

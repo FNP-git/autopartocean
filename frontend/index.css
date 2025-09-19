@@ -1,6 +1,0 @@
-iframe[src*="tawk.to"] {
-  position: fixed !important;
-  z-index: 2147483647 !important; /* max */
-  bottom: 0 !important;
-  right: 0 !important;
-}
